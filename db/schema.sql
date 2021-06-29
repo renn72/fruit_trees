@@ -1,5 +1,12 @@
 CREATE DATABASE fruit_tree_finder;
 
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  name TEXT,
+  email TEXT UNIQUE,
+  password_digest TEXT
+);
+
 CREATE TABLE fruit_trees (
   id SERIAL PRIMARY KEY,
   name TEXT CHECK(length(name) > 0),
@@ -7,16 +14,9 @@ CREATE TABLE fruit_trees (
   loc_lat FLOAT,
   loc_long FLOAT,
   details TEXT,
-  create_at TIMESTAMP NOT NULL,
+  create_at TIMESTAMP,
   user_id INTEGER,
   FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
-);
-
-CREATE TABLE users (
-  id SERIAL PRIMARY KEY,
-  name TEXT,
-  email TEXT UNIQUE,
-  password_digest TEXT
 );
 
 CREATE TABLE comments (
