@@ -21,4 +21,4 @@ app.use(express.static('client'));
 
 app.use(express.json());
 
-app.get('/api/trees', fruitTreeController);
+app.use('/api/trees', fruitTreeController);
