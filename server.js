@@ -1,7 +1,11 @@
 const express = require('express');
 const morgan = require('morgan');
+const dotenv = require('dotenv');
 const app = express();
-const port = 8080;
+
+dotenv.config();
+
+const port = process.env.PORT || 8080;
 
 const fruitTreeController = require('./controllers/fruit_tree_controller.js');
 
@@ -9,7 +13,9 @@ app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
 
-app.use(morgan('dev')); // logger
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'));
+}
 
 app.use(express.static('client'));
 
