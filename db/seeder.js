@@ -71,12 +71,28 @@ const createUser = async (name, email, password_digest) => {
   return db.query(sql, [name, email, password_digest]);
 };
 
-const createFruitTree = async (name, loc_lat, loc_long, details, user_id) => {
+const createFruitTree = async (
+  name,
+  loc_lat,
+  loc_long,
+  details,
+  image_url,
+  create_at,
+  user_id
+) => {
   const sql = `
-    insert into fruit_trees (name, loc_lat, loc_long, details, user_id)
-    values ($1, $2, $3, $4, $5) returning *`;
+    insert into fruit_trees (name, loc_lat, loc_long, details, image_url, create_at, user_id)
+    values ($1, $2, $3, $4, $5, $6, $7) returning *`;
 
-  return db.query(sql, [name, loc_lat, loc_long, details, user_id]);
+  return db.query(sql, [
+    name,
+    loc_lat,
+    loc_long,
+    details,
+    image_url,
+    create_at,
+    user_id,
+  ]);
 };
 
 const getUserIds = () => {
@@ -117,12 +133,16 @@ const seed = async () => {
   let userIds = await getUserIds();
   userIds = userIds.rows.map((id) => id.id);
 
+  let timestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
+
   for await (const tree of trees) {
     await createFruitTree(
       tree,
       _.random(0, 10),
       _.random(0, 10),
       `a pretty ${tree} tree`,
+      'address',
+      timestamp,
       _.sample(userIds)
     );
   }
