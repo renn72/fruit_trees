@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Comment = require('../models/comment.js');
+const validateComment = require('../middlewares/validate_comment.js');
 
 router.get('/', (req, res, next) => {
   Comment.findAll().then((dbResponse) => {
@@ -8,7 +9,7 @@ router.get('/', (req, res, next) => {
   });
 });
 
-router.post('/', (req, res) => {
+router.post('/', validateComment, (req, res) => {
   const { body, fruit_tree_id, user_id } = req.body;
 
   Comment.create(body, fruit_tree_id, user_id).then((dbResponse) => {
