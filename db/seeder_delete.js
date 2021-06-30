@@ -1,10 +1,12 @@
 const { Pool } = require('pg');
 const _ = require('lodash');
+const dotenv = require('dotenv');
+dotenv.config();
 
 const db = new Pool({
-  database: 'fruit_tree_finder',
-  user: 'student', // for david you can comment out
-  password: 'mypass', // for david you can comment out
+  database: process.env.DATABASE_NAME,
+  user: process.env.DATABASE_USER,
+  password: process.env.DATABASE_PASS,
 });
 
 db.query('delete from fruit_trees', []);
