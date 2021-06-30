@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const FruitTree = require('../models/fruit_tree.js');
+const validateFruitTree = require('../middlewares/validate_fruit_tree.js');
 
 router.get('/', (req, res, next) => {
   FruitTree.findAll().then((dbResponse) => {
@@ -8,7 +9,7 @@ router.get('/', (req, res, next) => {
   });
 });
 
-router.post('/', (req, res) => {
+router.post('/', validateFruitTree, (req, res) => {
   const { name, loc_lat, loc_long, details, image_url, create_at, user_id } =
     req.body;
 

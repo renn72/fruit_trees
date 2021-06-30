@@ -7,6 +7,7 @@ dotenv.config();
 
 const port = process.env.PORT || 8080;
 
+const errorHandler = require('./middlewares/error_handler.js');
 const fruitTreeController = require('./controllers/fruit_tree_controller.js');
 const userController = require('./controllers/user_controller.js');
 const commentController = require('./controllers/comment_controller.js');
@@ -31,3 +32,5 @@ app.use('/api/users', userController);
 app.use('/api/comments', commentController);
 
 app.use('/api/likes', likeController);
+
+app.use(errorHandler);

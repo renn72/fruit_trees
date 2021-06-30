@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/user.js');
+const validateUser = require('../middlewares/validate_user.js');
 
 router.get('/', (req, res, next) => {
   User.findAll().then((dbResponse) => {
@@ -8,7 +9,7 @@ router.get('/', (req, res, next) => {
   });
 });
 
-router.post('/', (req, res) => {
+router.post('/', validateUser, (req, res) => {
   const { name, email, password_digest } = req.body;
 
   User.create(name, email, password_digest).then((dbResponse) => {

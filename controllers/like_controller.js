@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Like = require('../models/like.js');
+const validateLike = require('../middlewares/validate_like.js');
 
 router.get('/', (req, res, next) => {
   Like.findAll().then((dbResponse) => {
@@ -8,7 +9,7 @@ router.get('/', (req, res, next) => {
   });
 });
 
-router.post('/', (req, res) => {
+router.post('/', validateLike, (req, res) => {
   const { fruit_tree_id, user_id } = req.body;
 
   Like.create(fruit_tree_id, user_id).then((dbResponse) => {
