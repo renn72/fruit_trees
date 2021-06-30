@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
   <body>
+    <header class="header-container">
+
+    </header>
+
     <div class="container"> 
       <button id = "find-me">Show my location</button><br/>
       <p id = "status"></p>
@@ -35,7 +39,10 @@
     <div id="map"></div>
 
     <script src="./js/variables.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDm0Wt-ERMegNb_MdpBiO474oV8GPewwlM&callback=initMap&libraries=&v=weekly"async></script>
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=INSERT-API-KEY&callback=initMap&libraries=&v=weekly"
+    async
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./js/app.js"></script>
 

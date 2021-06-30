@@ -15,6 +15,7 @@ node_modules/
 
 # misc
 db/.env
+client/.env
 client/js/variables.js
 .DS_Store
 .env
