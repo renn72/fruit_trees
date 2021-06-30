@@ -14,7 +14,7 @@ router.post('/', (req, res) => {
   User.create(name, email, password_digest).then((dbResponse) => {
     res.status(201).json({
       message: 'new user created',
-      fruit_tree: dbResponse.rows[0],
+      user: dbResponse.rows[0],
     });
   });
 });

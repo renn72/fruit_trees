@@ -14,7 +14,7 @@ router.post('/', (req, res) => {
   Like.create(fruit_tree_id, user_id).then((dbResponse) => {
     res.status(201).json({
       message: 'new Like created',
-      fruit_tree: dbResponse.rows[0],
+      like: dbResponse.rows[0],
     });
   });
 });
