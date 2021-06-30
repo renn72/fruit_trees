@@ -1,6 +1,24 @@
 //Call Geocode
-
+const apiKey = API_KEY
 var map 
+
+const fruitTreeTypes = ["apple","orange","lemon", "mango"];
+let markers = [
+  {
+      coords: {lat: -37.8066381,lng: 144.98555159999998}, 
+      iconImage:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+      content:"Collingwood"
+  },
+  {
+      coords:{lat: -38.3333,lng: 144.3167},
+      content: "Torquay"
+  },
+  {
+      coords:{lat: -38.4899,lng: 145.2038},
+      content: "Phillip Island"
+  }
+]
+
 
 // Add marker fucntion 
 function addMarker(props){
@@ -38,22 +56,6 @@ function initMap() {
     google.maps.Map(document.querySelector('#map'), options);
 
     // Array of markers 
-    var markers = [
-        {
-            coords: {lat: -37.8066381,lng: 144.98555159999998}, 
-            iconImage:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
-            content:"Collingwood"
-        },
-        {
-            coords:{lat: -38.3333,lng: 144.3167},
-            content: "Torquay"
-        },
-        {
-            coords:{lat: -38.4899,lng: 145.2038},
-            content: "Phillip Island"
-        }
-    ]
-    
     markers.forEach(marker => {
         addMarker(marker)
     })
@@ -74,7 +76,7 @@ function geoCode(e) {
   axios.get("https://maps.googleapis.com/maps/api/geocode/json", {
     params:{
       address: location,
-      key: "YOUR_API_KEY"
+      key: apiKey
     }
   })
   .then(function(res){
@@ -130,3 +132,37 @@ function geoCode(e) {
   })
 }
 
+
+
+
+function geoFindMe() {
+
+  const status = document.querySelector('#status');
+  const userCoords = document.querySelector('#user-coords');
+
+  userCoords.textContent = '';
+
+  function success(position) {
+    const latitude  = position.coords.latitude;
+    const longitude = position.coords.longitude;
+
+    status.textContent = '';
+    userCoords.textContent = `Latitude: ${latitude}, Longitude: ${longitude}`;
+    addMarker({coords: {lat: latitude, lng: longitude}});
+    initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+    map.setCenter(initialLocation);
+  }
+
+  function error() {
+    status.textContent = 'Unable to retrieve your location';
+  }
+
+  if(!navigator.geolocation) {
+    status.textContent = 'Geolocation is not supported by your browser';
+  } else {
+    status.textContent = 'Locating...';
+    navigator.geolocation.getCurrentPosition(success, error);
+  }
+}
+
+document.querySelector('#find-me').addEventListener('click', geoFindMe);
