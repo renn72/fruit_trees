@@ -14,7 +14,7 @@ router.post('/', (req, res) => {
   Comment.create(body, fruit_tree_id, user_id).then((dbResponse) => {
     res.status(201).json({
       message: 'new Comment created',
-      fruit_tree: dbResponse.rows[0],
+      comment: dbResponse.rows[0],
     });
   });
 });
