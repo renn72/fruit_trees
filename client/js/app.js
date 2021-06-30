@@ -74,7 +74,7 @@ function geoCode(e) {
   axios.get("https://maps.googleapis.com/maps/api/geocode/json", {
     params:{
       address: location,
-      key: "AIzaSyAMdrRvRfyNiEKkmfM9JzXip2XtT7-9K0U"
+      key: "YOUR_API_KEY"
     }
   })
   .then(function(res){
