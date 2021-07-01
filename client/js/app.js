@@ -1,44 +1,19 @@
 //Call Geocode
 var map 
 
-const fruitTreeTypes = ["apple","orange","lemon", "mango", "grapes", "lime", "pomegranate"];
-var markers = [];
-let markerProps = [
-  {
-      coords: {lat: -37.8066381,lng: 144.98555159999998}, 
-      iconImage:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
-      content:"apple"
-  },
-  {
-      coords:{lat: -38.3333,lng: 144.3167},
-      content: "mango"
-  },
-  {
-      coords:{lat: -38.4899,lng: 145.2038},
-      content: "apple"
-  }
-]
 //this tells us where it's gonna mark it but not a marker of google, used this to create google marker which is will be in mapMarkers
 
 
-fruitTreeTypes.forEach(item => {
-  let fruitOption = document.createElement('option');
-  fruitOption.textContent = item;
-  fruitTreeSelect.appendChild(fruitOption);
-})
-
 
 const filterLocationsByFruit = () => {
-  let fruitTreeValue = fruitTreeSelect.value;
+  let fruitTreeValue = fruitTreeSelectMap.value;
   deleteMarkers();
-  markerProps.filter(fruit => fruit.content === fruitTreeValue)
-    .forEach(marker => {
+  let selectedFruits = markerProps.filter(fruit => fruit.content === fruitTreeValue)
+    selectedFruits.forEach(marker => {
       addMarker(marker)
   })
+  createFruitList(selectedFruits)
 }
-
-fruitTreeSelect.addEventListener('change', filterLocationsByFruit)
-
 
 
 // Add marker fucntion 
@@ -197,3 +172,5 @@ function geoFindMe() {
 }
 
 document.querySelector('#find-me').addEventListener('click', geoFindMe);
+
+fruitTreeSelectMap.addEventListener('change', filterLocationsByFruit)
