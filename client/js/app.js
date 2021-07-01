@@ -1,9 +1,52 @@
-
-
-
+//Call Geocode
+const apiKey = API_KEY
 var map 
 
-// Add marker function 
+const fruitTreeTypes = ["apple","orange","lemon", "mango", "grapes", "lime", "pomegranate"];
+var markers = [];
+let markerProps = [
+  {
+      coords: {lat: -37.8066381,lng: 144.98555159999998}, 
+      iconImage:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+      content:"apple"
+  },
+  {
+      coords:{lat: -38.3333,lng: 144.3167},
+      content: "mango"
+  },
+  {
+      coords:{lat: -38.4899,lng: 145.2038},
+      content: "apple"
+  }
+]
+//this tells us where it's gonna mark it but not a marker of google, used this to create google marker which is will be in mapMarkers
+
+
+const fruitTreeSelect = document.querySelector('.fruit-tree-select')
+
+fruitTreeTypes.forEach(item => {
+  const fruitOption = document.createElement('option');
+  fruitOption.textContent = item;
+  fruitTreeSelect.appendChild(fruitOption);
+})
+
+
+const filterLocationsByFruit = () => {
+  let fruitTreeValue = fruitTreeSelect.value;
+  deleteMarkers();
+  markerProps.filter(fruit => fruit.content === fruitTreeValue)
+    .forEach(marker => {
+      addMarker(marker)
+  })
+}
+
+fruitTreeSelect.addEventListener('change', filterLocationsByFruit)
+
+
+
+
+
+// Add marker fucntion 
 function addMarker(props){
     var marker = new google.maps.Marker({
         position: props.coords, 
@@ -76,11 +119,7 @@ function geoCode(e) {
   axios.get("https://maps.googleapis.com/maps/api/geocode/json", {
     params:{
       address: location,
-<<<<<<< HEAD
       key: apiKey
-=======
-      key: "INSERT API KEY"
->>>>>>> 9df1764 (remove api key 2nd time)
     }
   })
   .then(function(res){
