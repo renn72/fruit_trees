@@ -3,8 +3,6 @@ const _ = require('lodash');
 const dotenv = require('dotenv');
 dotenv.config();
 
-const FruitTreeTypes = require('../models/fruit_tree_type.js');
-
 const db = new Pool({
   database: process.env.DATABASE_NAME,
   user: process.env.DATABASE_USER,
@@ -35,8 +33,26 @@ const names = [
   'jen',
   'jeff',
 ];
-const trees = FruitTreeTypes.types;
-
+const trees = [
+  'cherry',
+  'apple',
+  'pear',
+  'peach',
+  'pineapple',
+  'walnut',
+  'lemon',
+  'orange',
+  'lime',
+  'cherry',
+  'apple',
+  'pear',
+  'peach',
+  'pineapple',
+  'walnut',
+  'lemon',
+  'orange',
+  'lime',
+];
 const comments = [
   'nice tree',
   'shit tree',
