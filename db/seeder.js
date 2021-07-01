@@ -119,16 +119,18 @@ const seed = async () => {
 
   let timestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
 
-  for await (const tree of trees) {
-    await createFruitTree(
-      tree,
-      _.random(0, 10),
-      _.random(0, 10),
-      `a pretty ${tree} tree`,
-      'address',
-      timestamp,
-      _.sample(userIds)
-    );
+  for (let i = 0; i < 10; i++) {
+    for await (const tree of trees) {
+      await createFruitTree(
+        tree,
+        _.random(-37.67, -37.81),
+        _.random(144.75, 145.1),
+        `a pretty ${tree} tree`,
+        'address',
+        timestamp,
+        _.sample(userIds)
+      );
+    }
   }
 
   let fruitTreeIds = await getFruitTreeIds();
