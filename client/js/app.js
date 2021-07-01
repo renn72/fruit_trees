@@ -1,5 +1,4 @@
 //Call Geocode
-const apiKey = API_KEY
 var map 
 
 const fruitTreeTypes = ["apple","orange","lemon", "mango", "grapes", "lime", "pomegranate"];
@@ -22,10 +21,10 @@ let markerProps = [
 //this tells us where it's gonna mark it but not a marker of google, used this to create google marker which is will be in mapMarkers
 
 
-const fruitTreeSelect = document.querySelector('.fruit-tree-select')
+// const fruitTreeSelect = document.querySelector('.fruit-tree-select')
 
 fruitTreeTypes.forEach(item => {
-  const fruitOption = document.createElement('option');
+  // const fruitOption = document.createElement('option');
   fruitOption.textContent = item;
   fruitTreeSelect.appendChild(fruitOption);
 })
@@ -41,8 +40,6 @@ const filterLocationsByFruit = () => {
 }
 
 fruitTreeSelect.addEventListener('change', filterLocationsByFruit)
-
-
 
 
 
