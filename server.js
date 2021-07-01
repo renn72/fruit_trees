@@ -12,6 +12,7 @@ const fruitTreeController = require('./controllers/fruit_tree_controller.js');
 const userController = require('./controllers/user_controller.js');
 const commentController = require('./controllers/comment_controller.js');
 const likeController = require('./controllers/like_controller.js');
+const typeController = require('./controllers/type_controller.js');
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
@@ -24,6 +25,8 @@ if (process.env.NODE_ENV === 'development') {
 app.use(express.static('client'));
 
 app.use(express.json());
+
+app.use('/api/types', typeController);
 
 app.use('/api/trees', fruitTreeController);
 
