@@ -3,18 +3,34 @@ var map;
 
 //this tells us where it's gonna mark it but not a marker of google, used this to create google marker which is will be in mapMarkers
 
-
-
 const filterLocationsByFruit = () => {
   let fruitTreeValue = fruitTreeSelectMap.value;
   deleteMarkers();
-  let selectedFruits = markerProps.filter(fruit => fruit.content === fruitTreeValue)
-    selectedFruits.forEach(marker => {
-      addMarker(marker)
-  })
-  createFruitList(selectedFruits)
-}
+  let selectedFruits = markerProps.filter(
+    (fruit) => fruit.content === fruitTreeValue
+  );
+  selectedFruits.forEach((marker) => {
+    addMarker(marker);
+  });
+  createFruitList(selectedFruits);
+};
 
+function addMarker(props) {
+  var marker = new google.maps.Marker({
+    position: props.coords,
+    map: map,
+    // icon: props.iconImage
+  });
+  //check for customicon
+  if (props.iconImage) {
+    // Set icon image
+    marker.setIcon(props.iconImage);
+  }
+
+  if (props.content) {
+    var infoWindow = new google.maps.InfoWindow({
+      content: props.content,
+    });
 
     marker.addListener('click', function () {
       infoWindow.open(map, marker);
@@ -148,4 +164,4 @@ function geoFindMe() {
 
 document.querySelector('#find-me').addEventListener('click', geoFindMe);
 
-fruitTreeSelectMap.addEventListener('change', filterLocationsByFruit)
+fruitTreeSelectMap.addEventListener('change', filterLocationsByFruit);
