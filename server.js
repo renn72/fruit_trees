@@ -5,7 +5,7 @@ const app = express();
 
 dotenv.config();
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3001;
 
 const errorHandler = require('./middlewares/error_handler.js');
 const fruitTreeController = require('./controllers/fruit_tree_controller.js');

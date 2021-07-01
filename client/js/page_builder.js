@@ -57,24 +57,15 @@ function addMarker(props) {
   markers.push(marker);
 }
 
-function initMap() {
-  let mapOptions = {
-    center: { lat: -37.8136, lng: 144.9631 },
-    zoom: 8,
-  };
-
-  map = new google.maps.Map(mapDiv, mapOptions);
-}
-
 const buildPage = async () => {
-    fruitTreeLocations = await getFruitTrees();
-    comments = await getComments();
-    likes = await getLikes();
-    fruitTreeTypes = await getTypes();
-    
-    buildMapMakers();
-    createFruitDropDownMap();
-    addFruitTreeDiv();
+  fruitTreeLocations = await getFruitTrees();
+  comments = await getComments();
+  likes = await getLikes();
+  fruitTreeTypes = await getTypes();
+
+  buildMapMakers();
+  createFruitDropDownMap();
+  addFruitTreeDiv();
 };
 
 buildPage();
