@@ -21,10 +21,8 @@ let markerProps = [
 //this tells us where it's gonna mark it but not a marker of google, used this to create google marker which is will be in mapMarkers
 
 
-// const fruitTreeSelect = document.querySelector('.fruit-tree-select')
-
 fruitTreeTypes.forEach(item => {
-  // const fruitOption = document.createElement('option');
+  let fruitOption = document.createElement('option');
   fruitOption.textContent = item;
   fruitTreeSelect.appendChild(fruitOption);
 })
@@ -93,7 +91,7 @@ function initMap() {
         }
     // New map
     map = new 
-    google.maps.Map(document.querySelector('#map'), options);
+    google.maps.Map(mapDiv, options);
 
     // Array of markers 
     markerProps.forEach(marker => {
@@ -102,7 +100,6 @@ function initMap() {
 }
 
 // Get location form 
-var locationForm = document.querySelector('#location-form');
 
 //listen for submit
 
@@ -111,12 +108,10 @@ locationForm.addEventListener('submit', geoCode);
 function geoCode(e) {
   e.preventDefault();
 
-  let location = document.querySelector('#location-input').value;
-
   axios.get("https://maps.googleapis.com/maps/api/geocode/json", {
     params:{
-      address: location,
-      key: apiKey
+      address: locationInput.value,
+      key: "AIzaSyAPQMpyMTTyRwoHrUbbsMfdy0YvjtGpzhc"
     }
   })
   .then(function(res){
