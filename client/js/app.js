@@ -148,6 +148,8 @@ function geoFindMe() {
       position.coords.longitude
     );
     map.setCenter(initialLocation);
+
+    //we can could just show the trees in the area, instead of showing all trees on initMap  
   }
 
   function error() {
