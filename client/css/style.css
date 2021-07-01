@@ -4,6 +4,23 @@
        .page-header-container {
         height: 100px;
         display: flex;
+        justify-content: space-between;
+       }
+
+       .block {
+        display: block;
+       }
+
+       .p-1 {
+         padding: 1rem;
+       }
+
+       .m-1 {
+         margin: 1rem
+       }
+
+       .hidden {
+         visibility: hidden;
        }
 
        .page-heading {
@@ -44,10 +61,18 @@
       .fruit_tree_list,
       .create_fruit_tree {
         border: 1px solid black;
-        width: 80%;
+        width: 100%;
         height: 250px;
         margin: 0 auto
       }
+      .fruit-tree-list-heading{
+        text-align: center;
+      }
+
+      li{
+        list-style-type: none;
+      }
+
 
       .page-footer {
         border: 1px solid black;
