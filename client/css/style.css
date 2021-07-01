@@ -3,6 +3,7 @@
        
        .page-header-container {
         height: 100px;
+        display: flex;
        }
 
        .page-heading {
@@ -10,8 +11,8 @@
        }
 
        #map {
-        height: 80%;
-        width: 80%;
+        height: 70%;
+        width: 100%;
         margin: 0 auto;
         margin-top: 50px;
        }
@@ -38,4 +39,19 @@
       }
       .custom-map-control-button:hover {
         background: #ebebeb;
+      }
+
+      .fruit_tree_list,
+      .create_fruit_tree {
+        border: 1px solid black;
+        width: 80%;
+        height: 250px;
+        margin: 0 auto
+      }
+
+      .page-footer {
+        border: 1px solid black;
+        height: 100px;
+        display: grid;
+        place-items: center;
       }
