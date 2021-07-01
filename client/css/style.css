@@ -1,5 +1,14 @@
 /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
+       
+       .page-header-container {
+        height: 100px;
+       }
+
+       .page-heading {
+        text-align: center;
+       }
+
        #map {
         height: 80%;
         width: 80%;
