@@ -149,13 +149,13 @@ function geoCode(e) {
     addressComponentsOutput += '</ul>'
 
     // Output to app
-    document.querySelector('#formatted-address').innerHTML = 
+    formattedAddressDiv.innerHTML = 
     formattedAddressOutput;
 
-    document.querySelector('#address-components').innerHTML = 
+    addressComponentsDiv.innerHTML = 
     addressComponentsOutput;
 
-    document.querySelector('#geometry').innerHTML = 
+    geometryDiv.innerHTML = 
     geometryOutput;
 
     addMarker({coords: {lat: lat,lng: lng}});
@@ -171,31 +171,27 @@ function geoCode(e) {
 
 
 function geoFindMe() {
-
-  const status = document.querySelector('#status');
-  const userCoords = document.querySelector('#user-coords');
-
-  userCoords.textContent = '';
+  userCoordsP.textContent = '';
 
   function success(position) {
     const latitude  = position.coords.latitude;
     const longitude = position.coords.longitude;
 
-    status.textContent = '';
-    userCoords.textContent = `Latitude: ${latitude}, Longitude: ${longitude}`;
+    statusP.textContent = '';
+    userCoordsP.textContent = `Latitude: ${latitude}, Longitude: ${longitude}`;
     addMarker({coords: {lat: latitude, lng: longitude}});
     initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     map.setCenter(initialLocation);
   }
 
   function error() {
-    status.textContent = 'Unable to retrieve your location';
+    statusP.textContent = 'Unable to retrieve your location';
   }
 
   if(!navigator.geolocation) {
-    status.textContent = 'Geolocation is not supported by your browser';
+    statusP.textContent = 'Geolocation is not supported by your browser';
   } else {
-    status.textContent = 'Locating...';
+    statusP.textContent = 'Locating...';
     navigator.geolocation.getCurrentPosition(success, error);
   }
 }
