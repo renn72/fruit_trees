@@ -1,4 +1,9 @@
 
+// declare all the element variables the are needed for the DOM 
+const mapDiv = document.querySelector('#map')
 const fruitTreeSelect = document.querySelector('.fruit-tree-select')
-const fruitOption = document.createElement('option');
 
+// Get location form 
+const locationForm = document.querySelector('#location-form');
+
+const locationInput = document.querySelector('#location-input')
