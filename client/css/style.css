@@ -2,10 +2,10 @@
        * element that contains the map. */
        
       .page-header-container {
-        margin: 5% 10%;
+        margin: 5% 0%;
         height: 100px;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
        }
 
        .block {
@@ -46,9 +46,11 @@
         margin: 2% 20%;
       }
     
-      #myLinks {
+      #navLinks {
         display: none;
         text-align: right;
+        z-index: 1;
+        background-color: white;
       }
         
       .fa{
@@ -56,7 +58,11 @@
       }
         
       .nav-bar {
-        position: relative;
+        position: fixed;
+        top: 0;
+        width: 90%;
+        z-index: 1;
+        background-color: white;
       }
         
       .nav-bar a{
@@ -72,12 +78,25 @@
         right: 0;
         top: 0;
       }
+
+      a:hover{
+        color: black;
+        text-decoration: none;
+      }
         
       #map {
         height: 70%;
         width: 100%;
         margin: 0 auto;
         margin-top: 50px;
+      }
+
+
+      .content{
+        height: 50%;
+        padding-top: 50px;
+        margin-top: 15%;
+        position:relative;
       }
       
       /* Optional: Makes the sample page fill the window. */
