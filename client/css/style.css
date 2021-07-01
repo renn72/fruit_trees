@@ -1,7 +1,8 @@
 /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
        
-       .page-header-container {
+      .page-header-container {
+        margin: 5% 10%;
         height: 100px;
         display: flex;
         justify-content: space-between;
@@ -22,17 +23,62 @@
        .hidden {
          visibility: hidden;
        }
+      }
 
-       .page-heading {
-        text-align: center;
-       }
+      .page-heading{ 
+        margin: auto;
+      }
 
-       #map {
+      .user-thumbnail{
+        border-radius: 50%;
+        background-color: #cccccc;
+        width: 2em;
+        height: 2em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 48px;
+        color: #ffffff;
+        box-shadow: 0px 0px 6px rgba(20, 20, 20, 0.6);
+      }
+
+      .heading-title{
+        margin: 2% 20%;
+      }
+    
+      #myLinks {
+        display: none;
+        text-align: right;
+      }
+        
+      .fa{
+        font-size: 5em;
+      }
+        
+      .nav-bar {
+        position: relative;
+      }
+        
+      .nav-bar a{
+        color: black;
+        padding: 14px 16px;
+        text-decoration: none;
+        display: block;
+      }
+        
+      .nav-bar a.icon {
+        display:block;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+        
+      #map {
         height: 70%;
         width: 100%;
         margin: 0 auto;
         margin-top: 50px;
-       }
+      }
       
       /* Optional: Makes the sample page fill the window. */
       html,
