@@ -1,7 +1,7 @@
 let fruitTreeLocations = [];
 let comments = [];
 let likes = [];
-let fruitTreeTypesTest = [];
+let fruitTreeTypes = [];
 
 const getFruitTrees = async () => {
   let res = await axios.get('/api/trees');
