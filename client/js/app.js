@@ -35,16 +35,9 @@ function geoFindMe() {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
 
-    statusP.textContent = '';
-    userCoordsP.textContent = `Latitude: ${latitude}, Longitude: ${longitude}`;
-    addMarker({ coords: { lat: latitude, lng: longitude } });
-    initialLocation = new google.maps.LatLng(
-      position.coords.latitude,
-      position.coords.longitude
-    );
-    map.setCenter(initialLocation);
-
-    //we can could just show the trees in the area, instead of showing all trees on initMap  
+    userCoords.lat = latitude
+    userCoords.lng = longitude
+    console.log(latitude)
   }
 
   function error() {
@@ -57,7 +50,33 @@ function geoFindMe() {
     statusP.textContent = 'Locating...';
     navigator.geolocation.getCurrentPosition(success, error);
   }
+
 }
+
+function userLocationOnMap() {
+  statusP.textContent = '';
+  userCoordsP.textContent = `Latitude: ${latitude}, Longitude: ${longitude}`;
+  addMarker({ coords: { lat: latitude, lng: longitude } });
+  initialLocation = new google.maps.LatLng(
+    position.coords.latitude,
+    position.coords.longitude
+  );
+  map.setCenter(initialLocation);
+}
+
+function handleAddFruitSubmit(e) {
+  e.preventDefault()
+  navigator.geolocation.getCurrentPosition(res => {
+  const data = Object.fromEntries(new FormData(addFruitForm))
+  data["loc_lat"] = res.coords.latitude
+  data["loc_long"] = res.coords.longitude
+
+  console.log(data) })
+  
+}
+
+
 
 findMeBtn.addEventListener('click', geoFindMe);
 fruitTreeSelectMap.addEventListener('change', filterLocationsByFruit);
+addFruitForm.addEventListener('submit', handleAddFruitSubmit)

@@ -67,14 +67,14 @@ function initMap() {
 }
 
 const buildPage = async () => {
-  fruitTreeLocations = await getFruitTrees();
-  comments = await getComments();
-  likes = await getLikes();
-  fruitTreeTypes = await getTypes();
-
-  buildMapMakers();
-  createFruitDropDownMap();
-  addFruitTreeDiv();
+    fruitTreeLocations = await getFruitTrees();
+    comments = await getComments();
+    likes = await getLikes();
+    fruitTreeTypes = await getTypes();
+    
+    buildMapMakers();
+    createFruitDropDownMap();
+    addFruitTreeDiv();
 };
 
 buildPage();

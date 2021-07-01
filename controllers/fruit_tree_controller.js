@@ -11,10 +11,10 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', validateFruitTree, (req, res) => {
-  const { name, loc_lat, loc_long, details, image_url, create_at, user_id } =
+  const { name, loc_lat, loc_long, details, image_url, user_id } =
     req.body;
 
-  create_at = new Date().toISOString().slice(0, 19).replace('T', ' ');
+  const create_at = new Date().toISOString().slice(0, 19).replace('T', ' ');
 
   FruitTree.create(
     name,
