@@ -2,6 +2,8 @@
 // build the page that the user sees once the page has loaded. 
 
 // header div
+
+
 // container div 
     //show location button 
     //select fruit tree drop down 
