@@ -5,6 +5,7 @@ var fruitTreeLocations = [];
 var comments = [];
 var likes = [];
 var fruitTreeTypes = [];
+var userCoords = {lat: 0, lng: 0}
 
 const mapDiv = document.querySelector('#map');
 const fruitTreeSelectMap = document.querySelector('.fruit-tree-select-map');
@@ -31,9 +32,13 @@ const fruitList = document.querySelector('.fruit-tree-list');
 const createFruitTreeContainer = document.querySelector(
   '.create-fruit-tree-container'
 );
+
+const addFruitForm = document.querySelector('.add-fruit-form')
 const fruitTreeSelect = document.querySelector('.fruit-tree-select');
 const fruitDetails = document.querySelector('#fruit-details');
 const fruitTreeSubmit = document.querySelector('.fruit-tree-submit');
+const userLat = document.querySelector('.user-lat')
+const userLng = document.querySelector('.user-lng')
 
 // const fruitTreeTypes = [
 //   'apple',
@@ -59,5 +64,5 @@ let markerProps = [
   {
     coords: { lat: -38.4899, lng: 145.2038 },
     content: 'apple',
-  },
+  }
 ];
