@@ -1,13 +1,12 @@
-function invalidUserError(msg) {
-  let err = new Error(msg);
-  err.status = 422;
-  return err;
-}
+// function invalidUserError(msg) {
+//   let err = new Error(msg);
+//   err.status = 422;
+//   return err;
+// }
 
-function validateUserLogin(req, res, next) {
-  const { name, email, password_digest } = req.body;
-
-  next();
-}
+const validateUserLogin = (req, res) =>
+  req.email === res.email && req.password_digest === res.password_digest
+    ? true
+    : false;
 
 module.exports = validateUserLogin;

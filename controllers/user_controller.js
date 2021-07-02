@@ -29,9 +29,24 @@ router.delete('/:id', (req, res) => {
 
 router.get('/login', (req, res) => {
   User.checkLogin(req.body.email).then((dbResponse) => {
-    if (validateUserLogin(req.body, dbResponse.rows[0]))
-      console.log(dbResponse.rows);
-    res.status(200).json(dbResponse.rows);
+    if (dbResponse.rows.length > 0) {
+      console.log('user');
+      if (validateUserLogin(req.body, dbResponse.rows[0])) {
+        console.log('login success');
+        req.session.loggedIn = true;
+        req.session.userId = dbResponse.rows[0].id;
+        console.log(req.session);
+        res.status(200).json({ message: 'logged in' });
+      } else {
+        console.log('login failed');
+        res.status(418).json({ message: "user/password don't match" });
+      }
+    } else {
+      console.log('no user');
+      res.status(418).json({ message: "user doesn't exist" });
+    }
+
+    // res.status(200).json(dbResponse.rows);
   });
 });
 
