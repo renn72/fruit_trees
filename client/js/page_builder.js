@@ -47,19 +47,30 @@ function addMarker(props) {
   }
 
   if (props.content) {
-    
+
     let contentString = `<h3 id="firstHeading" class="firstHeading">${props.name}</h3>` +
       `<p>${props.details}</p>`
 
     let infoWindow = new google.maps.InfoWindow({
-      content:  contentString
+      content:  contentString,
+      maxWidth: 200
     });
 
     marker.addListener('click', function () {
+      closeOtherInfoWindows()
       infoWindow.open(map, marker);
+      infoObj[0] = infoWindow
     });
   }
   markers.push(marker);
+}
+
+function closeOtherInfoWindows() {
+  if (infoObj.length > 0) {
+    infoObj[0].set("marker", null);
+    infoObj[0].close();
+    infoObj[0].length = 0;
+  }
 }
 
 const buildPage = async () => {
