@@ -40,8 +40,9 @@ function addMarker(props) {
   let marker = new google.maps.Marker({
     position: props.coords,
     map: map,
+    icon: treeIconMap[0][props.name]
   });
-  if (props.iconImage) {
+  if (props.iconImage) { 
     marker.setIcon(props.iconImage);
   }
 

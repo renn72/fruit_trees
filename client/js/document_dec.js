@@ -8,6 +8,12 @@ var fruitTreeTypes = [];
 var userCoords = { lat: 0, lng: 0 };
 var markers = [];
 
+var treeIconMap = [{
+   cherry: "https://icons.iconarchive.com/icons/icons-land/3d-food/32/Fruit-Cherry-icon.png",
+    apple:"https://icons.iconarchive.com/icons/custom-icon-design/flatastic-7/24/Apple-icon.png",
+    pear:"https://icons.iconarchive.com/icons/google/noto-emoji-food-drink/24/32351-pear-icon.png",
+}]
+
 const mapDiv = document.querySelector('#map');
 const fruitTreeSelectMap = document.querySelector('.fruit-tree-select-map');
 
