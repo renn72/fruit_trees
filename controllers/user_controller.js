@@ -27,7 +27,9 @@ router.delete('/:id', (req, res) => {
   });
 });
 
-router.get('/login', (req, res) => {
+router.post('/login', (req, res) => {
+  console.log(req.body);
+
   User.checkLogin(req.body.email).then((dbResponse) => {
     if (dbResponse.rows.length > 0) {
       console.log('user');
@@ -45,14 +47,20 @@ router.get('/login', (req, res) => {
       console.log('no user');
       res.status(418).json({ message: "user doesn't exist" });
     }
-
-    // res.status(200).json(dbResponse.rows);
   });
 });
 
 router.get('/logout', (req, res) => {
   req.session.destroy((err) => {});
   res.json({ message: 'logged out' });
+});
+
+router.get('/logged', (req, res) => {
+  if (req.session.loggedIn) {
+    res.status(200).json({ message: 'User logged in', loggedIn: true });
+  } else {
+    res.status(418).json({ message: 'User not logged in', loggedIn: false });
+  }
 });
 
 router.get('/:id', (req, res) => {
