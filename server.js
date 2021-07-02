@@ -1,4 +1,5 @@
 const express = require('express');
+const session = require('express-session');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
 const app = express();
@@ -21,6 +22,14 @@ app.listen(port, () => {
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
+
+app.use(
+  session({
+    secret: 'super duper secret squirrel',
+    saveUninitialized: false,
+    resave: false,
+  })
+);
 
 app.use(express.static('client'));
 

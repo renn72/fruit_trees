@@ -118,8 +118,7 @@ const seed = async () => {
   userIds = userIds.rows.map((id) => id.id);
 
   let timestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
-
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 1; i++) {
     for await (const tree of trees) {
       await createFruitTree(
         tree,

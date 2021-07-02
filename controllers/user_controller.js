@@ -26,7 +26,17 @@ router.delete('/:id', (req, res) => {
   });
 });
 
-router.put('/:id', (req, res) => {});
+router.get('/login', (req, res) => {
+  User.checkLogin(req.body.email).then((dbResponse) => {
+    console.log(dbResponse.rows);
+    res.status(200).json(dbResponse.rows);
+  });
+});
+
+router.get('/logout', (req, res) => {
+  req.session.destroy((err) => {});
+  res.json({ message: 'logged out' });
+});
 
 router.get('/:id', (req, res) => {
   User.findOne(req.params.id).then((dbResponse) => {

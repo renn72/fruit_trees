@@ -29,12 +29,17 @@ const User = {
   },
 
   findOne(id) {
-    const sql = 'select * from users where id = $1';
+    const sql = 'select * from users where id = $1;';
     return db.query(sql, [id]);
   },
 
+  checkLogin(email) {
+    const sql = 'select * from users where email = $1;';
+    return db.query(sql, [email]);
+  },
+
   delete(id) {
-    const sql = 'delete from users where id = $1';
+    const sql = 'delete from users where id = $1;';
     return db.query(sql, [id]);
   },
 };
