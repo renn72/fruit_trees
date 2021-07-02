@@ -64,11 +64,12 @@
         
         <div class="fruit-tree-selection">
           <label>Showing fruit tree:</label>
-          <select id="search" class="fruit-tree-select-map">
+          <select id="filter-by-fruit" class="fruit-tree-select-map form-control">
             <option value="0">Select Fruit:</option>
           </select>
         </div>
 
+        <!--hey michael, can you add a class to display fruit-tree-list-->
         <ul class="fruit-tree-list"></ul>
       </div>
 
@@ -77,15 +78,16 @@
       <div class="create-fruit-tree-container">
         
         <form class="add-fruit-form">
-          <select class="fruit-tree-select" name="name">
+          <select class="fruit-tree-select form-control form-control-lg" id="add-fruit-tree-select" name="name">
             <option value="0">Select Fruit Tree:</option>
           </select>
           <textarea
             name="details"
             id="fruit-details"
-            class="add-fruit-details"
+            class="add-fruit-details form-control"
+            rows="3"
           ></textarea>
-          <button class="fruit-tree-submit">submit</button>
+          <button class="fruit-tree-submit btn btn-success" type="submit">submit</button>
         </form>
       </div>
 
@@ -111,7 +113,7 @@
       </div> -->
 
       <footer class="page-footer">
-        <p>&copy;2021 Fruit Tree Finder</p>
+        <p>2021&copy; Fruit Tree Finder</p>
       </footer>
     </div>
 
