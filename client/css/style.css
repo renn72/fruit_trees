@@ -1,10 +1,9 @@
 /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-       
       .page-header-container {
-        padding: 5%;
+        padding: 4% 0;
         display: grid;
-        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-columns: 1fr 4fr 0.7fr;
        }
 
        .block {
@@ -31,8 +30,8 @@
       .user-thumbnail{
         border-radius: 50%;
         background-color: #cccccc;
-        width: 2em;
-        height: 2em;
+        width: 2.5em;
+        height: 2.5em;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -44,15 +43,16 @@
 
       .heading-title{
         margin: auto;
+        font-size: 6em;
       }
     
       #navLinks {
         display: none;
         text-align: right;
         z-index: 1;
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0.7);
         width: 100%;
-        font-size: 3em;
+        font-size: 5em;
         padding: 2%;
       }
         
@@ -65,7 +65,7 @@
         top: 0;
         width: 100%;
         z-index: 1;
-        background-color: white;
+        background-color: #a6d468;
       }
         
       .nav-bar a{
@@ -79,7 +79,7 @@
         position: absolute;
         right: 0;
         top: 0;
-        margin: 6% 10%;
+        margin: 7% 3%;
       }
 
       a:hover{
@@ -88,7 +88,7 @@
       }
         
       #map {
-        height: 100%;
+        height: 85%;
         width: 100%;
         margin: 0 auto;
         margin-top: 50px;
@@ -97,8 +97,9 @@
 
       .content{
         height: 50%;
-        margin-top: 15%;
+        margin-top: 20%;
         position:relative;
+        font-size: 3em;
       }
       
       /* Optional: Makes the sample page fill the window. */
@@ -134,8 +135,11 @@
       }
 
       .fruit-tree-heading{
-        margin-top: 1%;
-        text-align: center;
+        /* margin-top: 1%;*/
+        text-align: center; 
+        font-size: 1.5em;
+        background-color: #a6d468;
+        padding: 2%;
       }
 
       li{
@@ -150,15 +154,22 @@
         place-items: center;
       }
 
-      .fruit-tree-selection, .add-fruit-form{
+      .fruit-tree-selection, 
+      .add-fruit-form {
         margin: 2.5% 10%;
       }
 
-      button.fruit-tree-submit{
-        margin: 0 45%;
-      }
-
-      select.fruit-tree-select, .add-fruit-details{
+      select.fruit-tree-select, 
+      .add-fruit-details{
         width: 100%;
         margin: 1% 0;
+      }
+      .fruit-tree-list-container,
+      .create-fruit-tree-container {
+        padding-bottom: 5%;
+        text-align: center;
+      }
+
+      select{
+        border-radius: 15px;
       }
