@@ -2,10 +2,9 @@
        * element that contains the map. */
        
       .page-header-container {
-        margin: 5% 0%;
-        height: 100px;
-        display: flex;
-        justify-content: center;
+        padding: 5%;
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
        }
 
        .block {
@@ -40,10 +39,11 @@
         font-size: 48px;
         color: #ffffff;
         box-shadow: 0px 0px 6px rgba(20, 20, 20, 0.6);
+        margin: auto;
       }
 
       .heading-title{
-        margin: 2% 20%;
+        margin: auto;
       }
     
       #navLinks {
@@ -51,6 +51,9 @@
         text-align: right;
         z-index: 1;
         background-color: white;
+        width: 100%;
+        font-size: 3em;
+        padding: 2%;
       }
         
       .fa{
@@ -60,14 +63,13 @@
       .nav-bar {
         position: fixed;
         top: 0;
-        width: 90%;
+        width: 100%;
         z-index: 1;
         background-color: white;
       }
         
       .nav-bar a{
         color: black;
-        padding: 14px 16px;
         text-decoration: none;
         display: block;
       }
@@ -77,6 +79,7 @@
         position: absolute;
         right: 0;
         top: 0;
+        margin: 6% 10%;
       }
 
       a:hover{
@@ -85,7 +88,7 @@
       }
         
       #map {
-        height: 70%;
+        height: 100%;
         width: 100%;
         margin: 0 auto;
         margin-top: 50px;
@@ -94,7 +97,6 @@
 
       .content{
         height: 50%;
-        padding-top: 50px;
         margin-top: 15%;
         position:relative;
       }
@@ -130,7 +132,9 @@
         height: 250px;
         margin: 0 auto
       }
-      .fruit-tree-list-heading{
+
+      .fruit-tree-heading{
+        margin-top: 1%;
         text-align: center;
       }
 
@@ -144,4 +148,17 @@
         height: 100px;
         display: grid;
         place-items: center;
+      }
+
+      .fruit-tree-selection, .add-fruit-form{
+        margin: 2.5% 10%;
+      }
+
+      button.fruit-tree-submit{
+        margin: 0 45%;
+      }
+
+      select.fruit-tree-select, .add-fruit-details{
+        width: 100%;
+        margin: 1% 0;
       }

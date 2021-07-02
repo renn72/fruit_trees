@@ -43,8 +43,8 @@
 
       <div id="navLinks">
         <a href="#account">Account</a>
-        <a href="#search">Search Fruit Trees</a>
-        <a href="#add">Add Fruit Tree</a>
+        <!-- <a href="#search">Search Fruit Trees</a>
+        <a href="#add">Add Fruit Tree</a> -->
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
         <a href="#FAQ">FAQ</a>
@@ -56,35 +56,33 @@
     </header>
 
     <div class="content">
-      <div class="container">
-        <button id="find-me-btn">Show my location</button><br />
-        <p id="status"></p>
-        <p id="user-coords"></p>
-
-        <select id="search" class="fruit-tree-select-map">
-          <option value="0">Select Fruit Tree:</option>
-        </select>
-      </div>
-
       <div id="map"></div>
 
       <div class="fruit-tree-list-container">
-        <h2 class="fruit-tree-list-heading">Fruit List</h2>
+        
+        <h2 class="fruit-tree-heading">Fruit Trees in Area</h2>
+        <div class="fruit-tree-selection">
+          <label>Showing fruit tree:</label>
+          <select id="search" class="fruit-tree-select-map">
+            <option value="0">Select Fruit:</option>
+          </select>
+        </div>
+
         <ul class="fruit-tree-list"></ul>
       </div>
 
       <div class="create-fruit-tree-container">
-        <h2>Add Fruit Tree</h2>
+        <h2 class="fruit-tree-heading">Add Fruit Tree</h2>
         <form class="add-fruit-form">
-          <select class="fruit-tree-select block p-1 m-1" name="name">
+          <select class="fruit-tree-select" name="name">
             <option value="0">Select Fruit Tree:</option>
           </select>
           <textarea
             name="details"
             id="fruit-details"
-            class="block p-1 m-1"
+            class="add-fruit-details"
           ></textarea>
-          <button class="fruit-tree-submit block m-1">submit</button>
+          <button class="fruit-tree-submit">submit</button>
         </form>
       </div>
 
