@@ -7,7 +7,9 @@ var likes = [];
 var fruitTreeTypes = [];
 var userCoords = { lat: 0, lng: 0 };
 var markers = [];
+var infoObj = [];
 
+<<<<<<< HEAD
 var treeIconMap = [
   {
     cherry:
@@ -17,6 +19,13 @@ var treeIconMap = [
     pear: 'https://icons.iconarchive.com/icons/google/noto-emoji-food-drink/24/32351-pear-icon.png',
   },
 ];
+=======
+var treeIconMap = [{
+   cherry: "https://icons.iconarchive.com/icons/icons-land/3d-food/32/Fruit-Cherry-icon.png",
+    apple:"https://icons.iconarchive.com/icons/bingxueling/fruit-vegetables/24/apple-red-icon.png",
+    pear:"https://icons.iconarchive.com/icons/google/noto-emoji-food-drink/24/32351-pear-icon.png",
+}]
+>>>>>>> 63c353d (close other info window function added)
 
 const mapDiv = document.querySelector('#map');
 const fruitTreeSelectMap = document.querySelector('.fruit-tree-select-map');
