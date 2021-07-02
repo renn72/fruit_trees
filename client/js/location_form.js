@@ -55,5 +55,3 @@ function geoCode(e) {
       console.log(error);
     });
 }
-
-locationForm.addEventListener('submit', geoCode);
