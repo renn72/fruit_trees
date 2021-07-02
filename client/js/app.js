@@ -35,9 +35,9 @@ function geoFindMe() {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
 
-    userCoords.lat = latitude
-    userCoords.lng = longitude
-    console.log(latitude)
+    userCoords.lat = latitude;
+    userCoords.lng = longitude;
+    console.log(latitude);
   }
 
   function error() {
@@ -50,7 +50,6 @@ function geoFindMe() {
     statusP.textContent = 'Locating...';
     navigator.geolocation.getCurrentPosition(success, error);
   }
-
 }
 
 function userLocationOnMap() {
@@ -65,18 +64,16 @@ function userLocationOnMap() {
 }
 
 function handleAddFruitSubmit(e) {
-  e.preventDefault()
-  navigator.geolocation.getCurrentPosition(res => {
-  const data = Object.fromEntries(new FormData(addFruitForm))
-  data["loc_lat"] = res.coords.latitude
-  data["loc_long"] = res.coords.longitude
+  e.preventDefault();
+  navigator.geolocation.getCurrentPosition((res) => {
+    const data = Object.fromEntries(new FormData(addFruitForm));
+    data['loc_lat'] = res.coords.latitude;
+    data['loc_long'] = res.coords.longitude;
 
-  console.log(data) })
-  
+    console.log(data);
+  });
 }
-
-
 
 // findMeBtn.addEventListener('click', geoFindMe);
 fruitTreeSelectMap.addEventListener('change', filterLocationsByFruit);
-addFruitForm.addEventListener('submit', handleAddFruitSubmit)
+addFruitForm.addEventListener('submit', handleAddFruitSubmit);
