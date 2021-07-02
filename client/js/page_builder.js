@@ -47,8 +47,12 @@ function addMarker(props) {
   }
 
   if (props.content) {
+    
+    let contentString = `<h3 id="firstHeading" class="firstHeading">${props.name}</h3>` +
+      `<p>${props.details}</p>`
+
     let infoWindow = new google.maps.InfoWindow({
-      content: props.content,
+      content:  contentString
     });
 
     marker.addListener('click', function () {
