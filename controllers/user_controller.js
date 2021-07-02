@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/user.js');
 const validateUser = require('../middlewares/validate_user.js');
+const validateUserLogin = require('../middlewares/validate_user_login.js');
 
 router.get('/', (req, res, next) => {
   User.findAll().then((dbResponse) => {
@@ -28,7 +29,8 @@ router.delete('/:id', (req, res) => {
 
 router.get('/login', (req, res) => {
   User.checkLogin(req.body.email).then((dbResponse) => {
-    console.log(dbResponse.rows);
+    if (validateUserLogin(req.body, dbResponse.rows[0]))
+      console.log(dbResponse.rows);
     res.status(200).json(dbResponse.rows);
   });
 });
