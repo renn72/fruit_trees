@@ -40,26 +40,26 @@ function addMarker(props) {
   let marker = new google.maps.Marker({
     position: props.coords,
     map: map,
-    icon: treeIconMap[0][props.name]
+    icon: treeIconMap[0][props.name],
   });
-  if (props.iconImage) { 
+  if (props.iconImage) {
     marker.setIcon(props.iconImage);
   }
 
   if (props.content) {
-
-    let contentString = `<h3 id="firstHeading" class="firstHeading">${props.name}</h3>` +
-      `<p>${props.details}</p>`
+    let contentString =
+      `<h3 id="firstHeading" class="firstHeading">${props.name}</h3>` +
+      `<p>${props.details}</p>`;
 
     let infoWindow = new google.maps.InfoWindow({
-      content:  contentString,
-      maxWidth: 200
+      content: contentString,
+      maxWidth: 200,
     });
 
     marker.addListener('click', function () {
-      closeOtherInfoWindows()
+      closeOtherInfoWindows();
       infoWindow.open(map, marker);
-      infoObj[0] = infoWindow
+      infoObj[0] = infoWindow;
     });
   }
   markers.push(marker);
@@ -67,7 +67,7 @@ function addMarker(props) {
 
 function closeOtherInfoWindows() {
   if (infoObj.length > 0) {
-    infoObj[0].set("marker", null);
+    infoObj[0].set('marker', null);
     infoObj[0].close();
     infoObj[0].length = 0;
   }

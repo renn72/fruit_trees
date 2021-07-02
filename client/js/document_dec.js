@@ -9,11 +9,15 @@ var userCoords = { lat: 0, lng: 0 };
 var markers = [];
 var infoObj = [];
 
-var treeIconMap = [{
-   cherry: "https://icons.iconarchive.com/icons/artbees/paradise-fruits/48/Cherry-icon.png",
-    apple:"https://icons.iconarchive.com/icons/bingxueling/fruit-vegetables/48/apple-red-icon.png",
-    pear:"https://icons.iconarchive.com/icons/google/noto-emoji-food-drink/48/32351-pear-icon.png",
-}]
+var treeIconMap = [
+  {
+    cherry:
+      'https://icons.iconarchive.com/icons/artbees/paradise-fruits/48/Cherry-icon.png',
+    apple:
+      'https://icons.iconarchive.com/icons/bingxueling/fruit-vegetables/48/apple-red-icon.png',
+    pear: 'https://icons.iconarchive.com/icons/google/noto-emoji-food-drink/48/32351-pear-icon.png',
+  },
+];
 
 const mapDiv = document.querySelector('#map');
 const fruitTreeSelectMap = document.querySelector('.fruit-tree-select-map');
