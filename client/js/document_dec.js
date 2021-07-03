@@ -46,7 +46,7 @@ const fruitList = document.querySelector('.fruit-tree-list');
 const createFruitTreeContainer = document.querySelector(
   '.create-fruit-tree-container'
 );
-
+const fruitTreeListUl = document.querySelector('ul.fruit-tree-list')
 const addFruitForm = document.querySelector('.add-fruit-form');
 const fruitTreeSelect = document.querySelector('.fruit-tree-select');
 const fruitDetails = document.querySelector('#fruit-details');
@@ -57,7 +57,7 @@ const userLng = document.querySelector('.user-lng');
 function initMap() {
   let mapOptions = {
     center: { lat: -37.8136, lng: 144.9631 },
-    zoom: 8,
+    zoom: 9,
   };
 
   map = new google.maps.Map(mapDiv, mapOptions);
