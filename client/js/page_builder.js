@@ -78,6 +78,7 @@ const buildPage = async () => {
   comments = await getComments();
   likes = await getLikes();
   fruitTreeTypes = await getTypes();
+  loggedIn = await areYouLoggedIn();
 
   buildMapMakers();
   createFruitDropDownMap();

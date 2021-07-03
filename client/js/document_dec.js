@@ -8,6 +8,8 @@ var fruitTreeTypes = [];
 var userCoords = { lat: 0, lng: 0 };
 var markers = [];
 var infoObj = [];
+var loggedIn = false;
+var userId = 0;
 
 var treeIconMap = [
   {
