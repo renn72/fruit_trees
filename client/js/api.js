@@ -23,6 +23,24 @@ const getUser = async (id) => {
   console.log(res.data);
 };
 
+const createUser = async (name, email, password) => {
+  let password_digest = password;
+  const data = {
+    name: name,
+    email: email,
+    password_digest: password_digest,
+  };
+
+  axios
+    .post('/api/users/', data)
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err.response.data.message);
+    });
+};
+
 const loginUser = async (email, password) => {
   let password_digest = password;
 
@@ -36,8 +54,22 @@ const loginUser = async (email, password) => {
     .then((res) => {
       console.log(res);
       loggedIn = true;
+      userId = res.data.userId;
     })
     .catch((err) => {
       console.log(err.response.data.message);
     });
+};
+
+const areYouLoggedIn = async () => {
+  res = await axios.get('/api/users/logged');
+
+  res.data.loggedIn ? (userId = res.data.userId) : (UserId = 0);
+
+  return res.data.loggedIn;
+};
+
+const logoutUser = async () => {
+  axios.get('/api/users/logout');
+  loggedIn = false;
 };
