@@ -43,7 +43,6 @@ function geoFindMe() {
   function error() {
     statusP.textContent = 'Unable to retrieve your location';
   }
-
   if (!navigator.geolocation) {
     statusP.textContent = 'Geolocation is not supported by your browser';
   } else {
