@@ -38,10 +38,10 @@
           </a>
         </div>
   
-        <h1 class="heading-title"><a href="#home">Fruit Tree Finder</a></h1>
+        <h1 class="heading-title"><a href="index.html">Fruit Tree Finder</a></h1>
   
         <div id="navLinks">
-          <a href="#account">Account</a>
+          <a href="login.html">Login</a>
           <!-- <a href="#search">Search Fruit Trees</a>
           <a href="#add">Add Fruit Tree</a> -->
           <a href="#about">About</a>
@@ -55,17 +55,21 @@
       </header>
 
       <div class="content">
-        <form action="" class="login-form" >
-            <input type="text" placeholder="first name">
-            <br>
-            <input type="text" placeholder="last name">
-            <br>
-            <input type="text" placeholder="email address">
-            <br>
-            <input type="text" placeholder="username">
-            <br>
-            <button>Login</button>
-            <p>or</p><a href="">sign up</a>
+        <form action="" class="signup-form" >
+          <label for="firstname">First Name</label>  
+          <input class="form-control form-control-lg" type="text" placeholder="First Name">
+
+          <label for="lastname">Last Name</label>  
+          <input class="form-control form-control-lg" type="text" placeholder="Last Name">
+          
+          <label for="emailaddress">Email Address</label>
+          <input class="form-control form-control-lg" type="email" placeholder="email@example.com">
+
+          <label for="password">Password</label>
+          <input class="form-control form-control-lg"  type="password" placeholder="Password">
+            
+          <button class="signup-btn btn btn-success" type="submit">Sign Up</button>
+          <span class ="signup-span">Got an account? <a href="login.html">Login</a></span>
 
         </form>
       </div>

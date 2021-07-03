@@ -54,6 +54,7 @@
         width: 100%;
         font-size: 5em;
         padding: 2%;
+        position: absolute;
       }
         
       .fa{
@@ -88,7 +89,7 @@
       }
         
       #map {
-        height: 85%;
+        height: 150%;
         width: 100%;
         margin: 0 auto;
         margin-top: 50px;
@@ -189,7 +190,7 @@
     }
 
     ul.fruit-tree-list{
-      border: solid 1px green;
+      /* border: solid 1px green; */
       margin: 5%;
       padding: 2.5%
     }
@@ -206,30 +207,29 @@
       bottom: 0;
     }
 
-    .login-form{
+    .login-form, .signup-form{
       margin: 50% 10%;
-      /* text-align: center; */
     }
 
-    .login-form>input{
+    .login-form>input, .signup-form>input{
       display:block;
       margin-bottom: 5%;
       /* width: 70%; */
       font-size: 1.5em;
     }
 
-    .login-btn{
+    .login-btn, .signup-btn{
       width: 100%;
       margin-top: 5%;
     }
 
-    .login-span{
+    .login-span, .signup-span{
       display:block;
       text-align: center;
+      margin: 2%
     }
 
     .signup-a{
-      color: #28a745;
       margin: 40%;
     }
 
@@ -242,6 +242,10 @@
 
     label.form-check-label{
       padding: 0 10%;
+    }
+
+    a{
+      color: #28a745;
     }
 
     
