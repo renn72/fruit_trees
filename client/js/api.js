@@ -19,8 +19,15 @@ const getTypes = async () => {
 };
 
 const getUser = async (id) => {
-  res = await axios.get(`/api/user/${id}`);
+  res = await axios.get(`/api/users/${id}`);
   console.log(res.data);
+  return res.data;
+};
+
+const getAllUsers = async () => {
+  res = await axios.get(`/api/users`);
+  console.log(res.data);
+  return res.data;
 };
 
 const createUser = async (name, email, password) => {
