@@ -37,11 +37,15 @@ router.post('/login', (req, res) => {
         console.log('login success');
         req.session.loggedIn = true;
         req.session.userId = dbResponse.rows[0].id;
+        req.session.userName = dbResponse.rows[0].name;
+
         console.log(dbResponse.rows[0].id);
         console.log(req.session);
-        res
-          .status(200)
-          .json({ message: 'logged in', userId: req.session.userId });
+        res.status(200).json({
+          message: 'logged in',
+          userId: req.session.userId,
+          userName: req.session.userName,
+        });
       } else {
         console.log('login failed');
         res.status(418).json({ message: "user/password don't match" });
@@ -64,6 +68,7 @@ router.get('/logged', (req, res) => {
       message: 'User logged in',
       loggedIn: true,
       userId: req.session.userId,
+      userName: req.session.userName,
     });
   } else {
     res.status(200).json({ message: 'User not logged in', loggedIn: false });

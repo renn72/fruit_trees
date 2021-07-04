@@ -6,8 +6,6 @@ const getFruitTrees = async () => {
     tree['comments'] = ['nice tree', 'shit tree'];
   });
 
-  console.log(res.data);
-
   return res.data;
 };
 
@@ -89,21 +87,25 @@ const loginUser = async (email, password) => {
       console.log(res);
       loggedIn = true;
       userId = res.data.userId;
-      userName = res.data.name;
+      userName = res.data.userName;
+      document.location.href = 'index.html'; // I hate putting this here
     })
     .catch((err) => {
       console.log(err.response.data.message);
       userId = 0;
       userName = '';
+      return res.data;
     });
 };
 
 const areYouLoggedIn = async () => {
   res = await axios.get('/api/users/logged');
 
+  console.log(res.data);
+
   if (res.data.loggedIn) {
     userId = res.data.userId;
-    userName = res.data.name;
+    userName = res.data.userName;
   } else {
     UserId = 0;
     userName = '';
@@ -119,11 +121,16 @@ const logoutUser = async () => {
 };
 
 // extra page building code
+const renderUserThumb = () => {
+  if (loggedIn) {
+    if (userName) {
+      userThumbnailAccount.innerHTML = `<h1>${userName
+        .charAt(0)
+        .toUpperCase()}</h1>`;
+    }
+  } else {
+    userThumbnailAccount.innerHTML = userThumbnailInnerHtmlSVG;
+  }
+};
 
-if (loggedIn) {
-  userThumbnailAccount.innerHTML = `<h2>${userName
-    .charAt(0)
-    .toUpperCase()}</h2>`;
-} else {
-  userThumbnailAccount.innerHTML = userThumbnailInnerHtmlSVG;
-}
+renderUserThumb();
