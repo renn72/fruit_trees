@@ -1,6 +1,6 @@
 # Fruit Tree finder - building our first Full-stack application in a small team. 
 
-[FRUIT FINDER LINK - ](https://multicultural-leaf-99080.herokuapp.com/)
+[FRUIT FINDER LINK](https://multicultural-leaf-99080.herokuapp.com/)
 
 ## Summary
 The Fruit Finder web-based application solves the issue of locating freely available fruit and vegetables that are publically accessible. 
@@ -18,8 +18,8 @@ We used the following dependencies to assist in both development and production.
 - morgan -> HTTP request logger middleware fro Node JS
 - pg -> Node Js module used to interface with the PostgreSQL database. 
 
-![picture](/Users/michaelchippendale/Documents/trello.png)
-![picture](/Users/michaelchippendale/Documents/wireframe.png)
+![picture](/Users/michaelchippendale/Documents/trello.png?raw=true "Group Trello")
+![picture](/Users/michaelchippendale/Documents/wireframe.png?raw=true "app wireframe")
 
 ## User Stories with Associated Technical Tasks
 
