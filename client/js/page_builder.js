@@ -38,12 +38,11 @@ function buildMapMakers() {
 }
 
 function addMarker(props) {
-  console.log(props)
   let marker = new google.maps.Marker({
     position: props.coords,
     map: map,
     icon: treeIconMap[0][props.name],
-    title: props.address
+    title: props.address,
   });
   if (props.iconImage) {
     marker.setIcon(props.iconImage);
@@ -87,6 +86,7 @@ const buildPage = async () => {
   buildMapMakers();
   createFruitDropDownMap();
   addFruitTreeDiv();
+  renderUserThumb();
 };
 
 buildPage();
