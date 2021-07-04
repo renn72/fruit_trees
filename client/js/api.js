@@ -100,8 +100,6 @@ const loginUser = async (email, password) => {
 const areYouLoggedIn = async () => {
   res = await axios.get('/api/users/logged');
 
-  console.log(res.data);
-
   if (res.data.loggedIn) {
     userId = res.data.userId;
     userName = res.data.userName;
@@ -109,7 +107,6 @@ const areYouLoggedIn = async () => {
     UserId = 0;
     userName = '';
   }
-  console.log(res.data.loggedIn);
 
   return res.data.loggedIn;
 };
@@ -132,7 +129,8 @@ viewBox="0 0 16 16"
 />
 </svg>`;
 // extra page building code
-const renderUserThumb = () => {
+const renderUserThumb = async () => {
+  loggedIn = await areYouLoggedIn();
   if (userThumbnailAccount) {
     if (loggedIn) {
       if (userName) {
