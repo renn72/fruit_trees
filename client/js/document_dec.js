@@ -54,6 +54,10 @@ const fruitTreeSubmit = document.querySelector('.fruit-tree-submit');
 const userLat = document.querySelector('.user-lat');
 const userLng = document.querySelector('.user-lng');
 
+const createUserForm = document.querySelector(".signup-form")
+
+
+
 function initMap() {
   let mapOptions = {
     center: { lat: -37.8136, lng: 144.9631 },
