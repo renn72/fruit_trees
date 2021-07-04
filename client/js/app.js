@@ -68,8 +68,9 @@ function handleAddFruitSubmit(e) {
     const data = Object.fromEntries(new FormData(addFruitForm));
     data['loc_lat'] = res.coords.latitude;
     data['loc_long'] = res.coords.longitude;
-
-    console.log(data);
+    data['user_id'] = 45 
+    console.log(data)
+    createFruitTree(data.user_id, data.name, data.details, data.loc_lat, data.loc_long)
   });
 }
 
