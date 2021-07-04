@@ -79,6 +79,6 @@ function initMap() {
     center: { lat: -37.8136, lng: 144.9631 },
     zoom: 10,
   };
-
+  geocoder = new google.maps.Geocoder();
   map = new google.maps.Map(mapDiv, mapOptions);
 }
