@@ -17,7 +17,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
 
-    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
 </head>
 <body>
     <header class="nav-bar page-header-container">
@@ -57,16 +57,16 @@
       <div class="content">
         <form action="" class="signup-form" >
           <label for="firstname">First Name</label>  
-          <input class="form-control form-control-lg" type="text" placeholder="First Name">
+          <input class="firstname form-control form-control-lg" type="text" placeholder="First Name" name="name">
 
-          <label for="lastname">Last Name</label>  
-          <input class="form-control form-control-lg" type="text" placeholder="Last Name">
+          <!-- <label for="lastname">Last Name</label>  
+          <input class="lastname form-control form-control-lg" type="text" placeholder="Last Name" name="last-name"> -->
           
           <label for="emailaddress">Email Address</label>
-          <input class="form-control form-control-lg" type="email" placeholder="email@example.com">
+          <input class="form-control form-control-lg" type="email" placeholder="email@example.com" name="email">
 
           <label for="password">Password</label>
-          <input class="form-control form-control-lg"  type="password" placeholder="Password">
+          <input class="form-control form-control-lg"  type="password" placeholder="Password" name="password">
             
           <button class="signup-btn btn btn-success" type="submit">Sign Up</button>
           <span class ="signup-span">Got an account? <a href="login.html">Login</a></span>
@@ -78,8 +78,14 @@
       <footer class="page-footer login-signup-footer">
         <p>&copy;2021 Fruit Tree Finder</p>
       </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <script src="./js/document_dec.js"></script>
+
+      <script src="./js/api.js"></script>
+      <script src="./js/signup.js"></script>
 
       <script>
         function toggleNavBar() {
@@ -94,7 +100,7 @@
           }
         }
       </script>
-  
-    
+      
+
 </body>
 </html>

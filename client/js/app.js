@@ -74,6 +74,9 @@ function handleAddFruitSubmit(e) {
   });
 }
 
+
 // findMeBtn.addEventListener('click', geoFindMe);
 fruitTreeSelectMap.addEventListener('change', filterLocationsByFruit);
 addFruitForm.addEventListener('submit', handleAddFruitSubmit);
+
+
