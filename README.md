@@ -18,8 +18,8 @@ We used the following dependencies to assist in both development and production.
 - morgan -> HTTP request logger middleware fro Node JS
 - pg -> Node Js module used to interface with the PostgreSQL database. 
 
-![picture](/Users/michaelchippendale/Documents/trello.png?raw=true "Group Trello")
-![picture](/Users/michaelchippendale/Documents/wireframe.png?raw=true "app wireframe")
+![trello planning document](images/trello.png)
+![wireframe](images/wireframes.png)
 
 ## User Stories with Associated Technical Tasks
 
