@@ -68,29 +68,38 @@
             />
           </svg>
         </div>
-
       
+        <div class="content">
+            <form action="" class="edit-form">
+              <label for="firstname">Name</label>
+              <input
+                class="firstname form-control form-control-lg"
+                type="text"
+                placeholder="Name"
+                name="name"
+              />
       
-      <table class="user-info-table">
-        <tr>
-          <td><label for="heading">Name</label></td>
-          <td><label for="user-name">Name</label></td>
-        </tr>
-        <tr>
-          <td>Email Address</td>
-          <td> <label for="user-email">email@example.com</label></td>
-        </tr>
-      </table>
-      <a href="edit_account.html" class="edit-profile">Edit Profile</a>
-
-      <div class="user-tree-info-container">
-        <h2 class="profile-trees-header">Trees Added</h2>
-        <div class="user-tree-info"> </div>
-
-        <h2 class="profile-trees-header">Favourited Trees</h2>
-        <div class="user-tree-info"></div>
-      </div>
-    </div>
+              <label for="emailaddress">Email Address</label>
+              <input
+                class="form-control form-control-lg"
+                type="email"
+                placeholder="email@example.com"
+                name="email"
+              />
+      
+              <label for="password">Password</label>
+              <input
+                class="form-control form-control-lg"
+                type="password"
+                placeholder="Password"
+                name="password"
+              />
+      
+              <button class="edit-btn btn btn-success" type="submit">
+                Edit
+              </button>
+            </form>
+          </div>
 
 
 
