@@ -51,16 +51,25 @@ function addMarker(props) {
     marker.setIcon(props.iconImage);
   }
 
-  
-  
-
   if (props.content) {
+    let commentStr = '';
+
+    props.comments.forEach((comment) => {
+      commentStr += `<p> - ${comment}</p> `;
+    });
+
     let contentString =
       `<p id="firstHeading" class="firstHeading">${props.name}</p>` +
       `<p><span class="like-info-window">Likes:</span> ${props.likes}</p>` +
       `<p><span class="details-info-window">Details:</span> ${props.details}</p>` +
-      `<p><span class="details-info-window">Comments:</span> ${props.comments}</p>` +
-      `<p><span class="details-info-window">Distance:</span> ${distance(props.coords.lat, props.coords.lng, userCoords.lat, userCoords.lng, "K")}km</p>`;
+      `<p><span class="details-info-window">Comments:</span> ${commentStr}</p>` +
+      `<p><span class="details-info-window">Distance:</span> ${distance(
+        props.coords.lat,
+        props.coords.lng,
+        userCoords.lat,
+        userCoords.lng,
+        'K'
+      )}km</p>`;
 
     let infoWindow = new google.maps.InfoWindow({
       content: contentString,
@@ -84,30 +93,33 @@ function closeOtherInfoWindows() {
   }
 }
 
-// hoping to use to calculate distance between user and each fruit. 
+// hoping to use to calculate distance between user and each fruit.
 function distance(lat1, lon1, lat2, lon2, unit) {
-	if ((lat1 == lat2) && (lon1 == lon2)) {
-		return 0;
-	}
-	else {
-		var radlat1 = Math.PI * lat1/180;
-		var radlat2 = Math.PI * lat2/180;
-		var theta = lon1-lon2;
-		var radtheta = Math.PI * theta/180;
-		var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
-		if (dist > 1) {
-			dist = 1;
-		}
-		dist = Math.acos(dist);
-		dist = dist * 180/Math.PI;
-		dist = dist * 60 * 1.1515;
-		if (unit=="K") { dist = dist * 1.609344 }
-		if (unit=="N") { dist = dist * 0.8684 }
-		return Math.floor(dist);
-	}
+  if (lat1 == lat2 && lon1 == lon2) {
+    return 0;
+  } else {
+    var radlat1 = (Math.PI * lat1) / 180;
+    var radlat2 = (Math.PI * lat2) / 180;
+    var theta = lon1 - lon2;
+    var radtheta = (Math.PI * theta) / 180;
+    var dist =
+      Math.sin(radlat1) * Math.sin(radlat2) +
+      Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+    if (dist > 1) {
+      dist = 1;
+    }
+    dist = Math.acos(dist);
+    dist = (dist * 180) / Math.PI;
+    dist = dist * 60 * 1.1515;
+    if (unit == 'K') {
+      dist = dist * 1.609344;
+    }
+    if (unit == 'N') {
+      dist = dist * 0.8684;
+    }
+    return Math.floor(dist);
+  }
 }
-  
-
 
 const buildPage = async () => {
   fruitTreeLocations = await getFruitTrees();

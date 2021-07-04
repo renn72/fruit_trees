@@ -1,343 +1,345 @@
 /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-      .page-header-container {
-        padding: 4% 0;
-        display: grid;
-        grid-template-columns: 1fr 4fr 0.7fr;
-       }
+.page-header-container {
+  padding: 4% 0;
+  display: grid;
+  grid-template-columns: 1fr 4fr 0.7fr;
+}
 
-       .block {
-        display: block;
-       }
+.block {
+  display: block;
+}
 
-       .p-1 {
-         padding: 1rem;
-       }
+.p-1 {
+  padding: 1rem;
+}
 
-       .m-1 {
-         margin: 1rem
-       }
+.m-1 {
+  margin: 1rem;
+}
 
-       .hidden {
-         visibility: hidden;
-       }
-      
+.hidden {
+  visibility: hidden;
+}
 
-      .page-heading{ 
-        margin: auto;
-      }
+.page-heading {
+  margin: auto;
+}
 
-      .user-thumbnail{
-        border-radius: 50%;
-        background-color: #cccccc;
-        width: 2.5em;
-        height: 2.5em;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 48px;
-        color: #ffffff;
-        box-shadow: 0px 0px 6px rgba(20, 20, 20, 0.6);
-        margin: auto;
-      }
+.user-thumbnail {
+  border-radius: 50%;
+  background-color: #cccccc;
+  width: 2.5em;
+  height: 2.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  color: #ffffff;
+  box-shadow: 0px 0px 6px rgba(20, 20, 20, 0.6);
+  margin: auto;
+}
 
-      .heading-title{
-        margin: auto;
-        font-size: 5.5em;
-      }
-    
-      #navLinks {
-        display: none;
-        text-align: right;
-        z-index: 1;
-        background-color: rgba(255, 255, 255, 0.7);
-        width: 100%;
-        font-size: 5em;
-        padding: 2%;
-        position: absolute;
-      }
-        
-      .fa{
-        font-size: 5em;
-      }
-        
-      .nav-bar {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1;
-        background-color: #a6d468;
-      }
-        
-      .nav-bar a{
-        color: black;
-        text-decoration: none;
-        display: block;
-      }
-        
-      .nav-bar a.icon {
-        display:block;
-        position: absolute;
-        right: 0;
-        top: 0;
-        margin: 6% 3%;
-      }
+.heading-title {
+  margin: auto;
+  font-size: 5.5em;
+}
 
-      a:hover{
-        color: black;
-        text-decoration: none;
-      }
-        
-      #map {
-        height: 150%;
-        width: 100%;
-        margin: 0 auto;
-        margin-top: 50px;
-      }
+#navLinks {
+  display: none;
+  text-align: right;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  font-size: 5em;
+  padding: 2%;
+  position: absolute;
+}
 
+.fa {
+  font-size: 5em;
+}
 
-      .content{
-        height: 50%;
-        position:relative;
-        font-size: 3em;
-      }
-      
-      /* Optional: Makes the sample page fill the window. */
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      
-      .custom-map-control-button {
-        background-color: #fff;
-        border: 0;
-        border-radius: 2px;
-        box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
-        margin: 10px;
-        padding: 0 0.5em;
-        font: 400 18px Roboto, Arial, sans-serif;
-        overflow: hidden;
-        height: 40px;
-        cursor: pointer;
-      }
-      .custom-map-control-button:hover {
-        background: #ebebeb;
-      }
+.nav-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: #a6d468;
+}
 
-      .fruit_tree_list,
-      .create_fruit_tree {
-        border: 1px solid black;
-        width: 100%;
-        height: 250px;
-        margin: 0 auto
-      }
+.nav-bar a {
+  color: black;
+  text-decoration: none;
+  display: block;
+}
 
-      .fruit-tree-heading{
-        /* margin-top: 1%;*/
-        text-align: center; 
-        font-size: 1.5em;
-        background-color: #a6d468;
-        padding: 2%;
-      }
-      .fruit-tree-selection{
-        background-color: #a6d468;
-        padding: 2%;
-      }
+.nav-bar a.icon {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 6% 3%;
+}
 
-      li{
-        list-style-type: none;
-      }
+a:hover {
+  color: black;
+  text-decoration: none;
+}
 
+#map {
+  height: 150%;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
 
-      .page-footer {
-        position: absolute;
-        right: 0;
-        left: 0;
-        background-color: #a6d468;
-        text-align: center;
-        padding: 5%;
-      }
+.content {
+  height: 50%;
+  position: relative;
+  font-size: 3em;
+}
 
-      .add-fruit-form {
-        margin: 2.5% 10%;
-      }
+/* Optional: Makes the sample page fill the window. */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
-      select.fruit-tree-select, 
-      .add-fruit-details{
-        width: 100%;
-        margin: 2% 0;
-        font-size: 1em;
-      }
-      .fruit-tree-list-container,
-      .create-fruit-tree-container {
-        margin-bottom: 5%;
-        text-align: center;
-      }
+.custom-map-control-button {
+  background-color: #fff;
+  border: 0;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+  margin: 10px;
+  padding: 0 0.5em;
+  font: 400 18px Roboto, Arial, sans-serif;
+  overflow: hidden;
+  height: 40px;
+  cursor: pointer;
+}
+.custom-map-control-button:hover {
+  background: #ebebeb;
+}
 
-      #filter-by-fruit{
-        font-size: 1em;
-        width: 50%;
-        display: inline;
-        height: auto;
-      }
+.fruit_tree_list,
+.create_fruit_tree {
+  border: 1px solid black;
+  width: 100%;
+  height: 250px;
+  margin: 0 auto;
+}
 
-    #add-fruit-tree-select{
-      height: 100%;
-    }
+.fruit-tree-heading {
+  /* margin-top: 1%;*/
+  text-align: center;
+  font-size: 1.5em;
+  background-color: #a6d468;
+  padding: 2%;
+}
+.fruit-tree-selection {
+  background-color: #a6d468;
+  padding: 2%;
+}
 
-    .btn-success{
-      font-size: 1em;
-    }
+li {
+  list-style-type: none;
+}
 
-    ul.fruit-tree-list{
-      /* border: solid 1px green; */
-      margin: 5%;
-      padding: 2.5%
-    }
+.page-footer {
+  position: absolute;
+  right: 0;
+  left: 0;
+  background-color: #a6d468;
+  text-align: center;
+  padding: 5%;
+}
 
-    .form-control:focus {
-      border-color: #3d9048;
-      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(30, 251, 41, 0.854);
-    }
+.add-fruit-form {
+  margin: 2.5% 10%;
+}
 
-    /* .form-control{
+select.fruit-tree-select,
+.add-fruit-details {
+  width: 100%;
+  margin: 2% 0;
+  font-size: 1em;
+}
+.fruit-tree-list-container,
+.create-fruit-tree-container {
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+#filter-by-fruit {
+  font-size: 1em;
+  width: 50%;
+  display: inline;
+  height: auto;
+}
+
+#add-fruit-tree-select {
+  height: 100%;
+}
+
+.btn-success {
+  font-size: 1em;
+}
+
+ul.fruit-tree-list {
+  /* border: solid 1px green; */
+  margin: 5%;
+  padding: 2.5%;
+}
+
+.form-control:focus {
+  border-color: #3d9048;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 8px rgba(30, 251, 41, 0.854);
+}
+
+/* .form-control{
       font-size: 1em;
     } */
 
-
 /* for login form */
-    .login-signup-footer{
-      font-size: 2.5em;
-      bottom: 0;
-    }
+.login-signup-footer {
+  font-size: 2.5em;
+  bottom: 0;
+}
 
-    .login-form, .signup-form{
-      margin: 50% 10%;
-    }
+.login-form,
+.signup-form {
+  margin: 50% 10%;
+}
 
-    .login-form>input, .signup-form>input{
-      display:block;
-      margin-bottom: 5%;
-      /* width: 70%; */
-      font-size: 1.5em;
-    }
+.login-form > input,
+.signup-form > input {
+  display: block;
+  margin-bottom: 5%;
+  /* width: 70%; */
+  font-size: 1.5em;
+}
 
-    .login-btn, .signup-btn, .edit-btn{
-      width: 100%;
-      margin-top: 5%;
-    }
+.login-btn,
+.signup-btn,
+.edit-btn {
+  width: 100%;
+  margin-top: 5%;
+}
 
-    .login-span, .signup-span{
-      display:block;
-      text-align: center;
-      margin: 2%
-    }
+.login-span,
+.signup-span {
+  display: block;
+  text-align: center;
+  margin: 2%;
+}
 
-    .signup-a{
-      margin: 40%;
-    }
+.signup-a {
+  margin: 40%;
+}
 
-    input[type=checkbox], input[type=radio]{
-      height:1em;
-      width: 1em;
-      filter: hue-rotate(210deg);
-      margin: 1.5% 0;
-    }
+input[type='checkbox'],
+input[type='radio'] {
+  height: 1em;
+  width: 1em;
+  filter: hue-rotate(210deg);
+  margin: 1.5% 0;
+}
 
-    label.form-check-label{
-      padding: 0 10%;
-    }
+label.form-check-label {
+  padding: 0 10%;
+}
 
-    a{
-      color: #28a745;
-    }
-    
+a {
+  color: #28a745;
+}
 
-    .gm-style .gm-style-iw-c {
-      background-color: rgb(255, 255, 255);
-      border-radius: 8px;
-      box-shadow: 0 2px 7px 1px rgba(0,0,0,0.3);
-      font-size: 30px;
-      font-weight: 300;
-      padding: 30px;
-      width: 600px;
-      height: 350px;
-      max-width: none;
-      border: 2px solid#3d9048;
-    }
+.gm-style .gm-style-iw-c {
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.3);
+  font-size: 30px;
+  font-weight: 300;
+  padding: 30px;
+  width: 600px;
+  height: 450px;
+  overflow: scroll;
+  max-width: none;
+  border: 2px solid#3d9048;
+}
 
+#firstHeading {
+  font-size: 50px;
+  font-weight: bold;
+  color: #3d9048;
+}
 
-    #firstHeading {
-      font-size: 50px;
-      font-weight: bold;
-      color: #3d9048;
-    }
+.firstHeading {
+  font-size: 60px;
+}
 
-    .firstHeading{
-      font-size: 60px;
-    }
+.details-info-window,
+.like-info-window {
+  font-weight: bold;
+}
 
-    .details-info-window, .like-info-window {
-      font-weight: bold;
-    }
+/* Account html */
+.user-info-table {
+  font-size: 3em;
+  width: 100%;
+  text-align: left;
+  margin: 5% 0;
+}
 
+tr {
+  line-height: 2;
+}
 
-    /* Account html */
-    .user-info-table{
-      font-size: 3em;
-      width: 100%;
-      text-align: left;
-      margin: 5% 0;
-    }
+.user-info {
+  width: 80%;
+  margin: 30% auto;
+  text-align: center;
+}
+.profile {
+  font-size: 10em;
+  margin: 15%;
+}
 
-    tr{
-      line-height: 2;
-    }
+.profile-background {
+  background-color: lightgray;
+  height: 250px;
+  width: 250px;
+  margin: 5% auto;
+  border-radius: 50%;
+}
 
-    .user-info{
-      width: 80%;
-      margin: 30% auto;
-      text-align: center;
-    }
-    .profile{
-      font-size: 10em;
-      margin: 15%;
-    }
+.edit-profile {
+  font-size: 3em;
+}
 
-    .profile-background{
-      background-color: lightgray;
-      height: 250px;
-      width: 250px;
-      margin: 5% auto;
-      border-radius: 50%;
-    }
+.profile-trees-header {
+  font-size: 3em;
+  text-align: left;
+  padding: 2%;
+}
 
-    .edit-profile{
-      font-size: 3em;
-    }
+.user-tree-info-container {
+  border: 1px solid green;
+  margin-top: 20%;
+}
+.user-tree-info {
+  margin: 2% 0;
+  height: 100px;
+}
 
-    .profile-trees-header{
-      font-size: 3em;
-      text-align: left;
-      padding: 2%;
-    }
-    
-    .user-tree-info-container{
-      border: 1px solid green;
-      margin-top: 20%;
-    }
-    .user-tree-info{
-      margin: 2% 0;
-      height: 100px;
-    }
-    
-    .edit-form>input{
-      font-size: 1.5em;
-      margin-bottom: 5%;
-    }
+.edit-form > input {
+  font-size: 1.5em;
+  margin-bottom: 5%;
+}
 
-    .edit-form{
-      text-align: left;
-    }
+.edit-form {
+  text-align: left;
+}

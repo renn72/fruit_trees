@@ -3,7 +3,13 @@ const getFruitTrees = async () => {
 
   res.data.forEach((tree) => {
     tree['likes'] = 3;
-    tree['comments'] = ['nice tree', 'shit tree'];
+    tree['comments'] = [
+      'nice tree',
+      'shit tree',
+      'tall tree',
+      'short tree',
+      'fruity tree',
+    ];
   });
 
   return res.data;
