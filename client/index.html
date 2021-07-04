@@ -23,7 +23,7 @@
   <body>
     <header class="nav-bar page-header-container">
       <div class="user-thumbnail">
-        <a class="account user-thumbnail-account" href="">
+        <a class="account user-thumbnail-account" href="account.html">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="1em"
@@ -43,8 +43,6 @@
 
       <div id="navLinks">
         <a href="login.html">Login</a>
-        <!-- <a href="#search">Search Fruit Trees</a>
-        <a href="#add">Add Fruit Tree</a> -->
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
         <a href="#FAQ">FAQ</a>
@@ -58,10 +56,9 @@
     <div class="content">
       <div id="map"></div>
 
-      <h2 class="fruit-tree-heading">Fruit Trees in Area</h2>
+
       <div class="fruit-tree-list-container">
         <div class="fruit-tree-selection">
-          <label>Showing fruit tree:</label>
           <select
             id="filter-by-fruit"
             class="fruit-tree-select-map form-control"
@@ -70,7 +67,6 @@
           </select>
         </div>
 
-        <!--hey michael, can you add a class to display fruit-tree-list-->
         <ul class="fruit-tree-list"></ul>
       </div>
 
@@ -78,7 +74,7 @@
       <div class="create-fruit-tree-container">
         <form class="add-fruit-form">
           <select
-            class="fruit-tree-select form-control form-control-lg"
+            class="fruit-tree-select form-control form-control-lg "
             id="add-fruit-tree-select"
             name="name"
           >
