@@ -67,10 +67,9 @@ const createUser = async (name, email, password) => {
     .post('/api/users/', data)
     .then((res) => {
       console.log(res);
+      document.location.href = '/login';
     })
-    .catch((err) => {
-      console.log(err.response.data.message);
-    });
+    .catch((err) => {});
 };
 
 const loginUser = async (email, password) => {
