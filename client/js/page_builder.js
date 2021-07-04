@@ -38,10 +38,12 @@ function buildMapMakers() {
 }
 
 function addMarker(props) {
+  console.log(props)
   let marker = new google.maps.Marker({
     position: props.coords,
     map: map,
     icon: treeIconMap[0][props.name],
+    title: props.address
   });
   if (props.iconImage) {
     marker.setIcon(props.iconImage);
@@ -49,12 +51,13 @@ function addMarker(props) {
 
   if (props.content) {
     let contentString =
-      `<h3 id="firstHeading" class="firstHeading">${props.name}</h3>` +
-      `<p>${props.details}</p>`;
+      `<p id="firstHeading" class="firstHeading">${props.name}</p>` +
+      `<p><span class="like-info-window">Likes:</span> ${props.likes}</p>` +
+      `<p><span class="details-info-window">Details:</span> ${props.details}</p>`;
 
     let infoWindow = new google.maps.InfoWindow({
       content: contentString,
-      maxWidth: 200,
+      maxWidth: 700,
     });
 
     marker.addListener('click', function () {
