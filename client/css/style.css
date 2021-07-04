@@ -247,6 +247,34 @@
     a{
       color: #28a745;
     }
+    
+
+    .gm-style .gm-style-iw-c {
+      background-color: rgb(255, 255, 255);
+      border-radius: 8px;
+      box-shadow: 0 2px 7px 1px rgba(0,0,0,0.3);
+      font-size: 30px;
+      font-weight: 300;
+      padding: none;
+      width: 700px;
+      height: 200px;
+      max-width: none;
+    }
+
+
+    #firstHeading {
+      font-size: 50px;
+      font-weight: bold;
+    }
+
+    .firstHeading{
+      font-size: 60px;
+    }
+
+    .details-info-window, .like-info-window {
+      font-weight: bold;
+    }
+
 
     
     
