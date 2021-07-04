@@ -23,7 +23,7 @@
   <body>
     <header class="nav-bar page-header-container">
       <div class="user-thumbnail">
-        <a class="account" href="">
+        <a class="account user-thumbnail-account" href="">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="1em"
@@ -60,11 +60,12 @@
 
       <h2 class="fruit-tree-heading">Fruit Trees in Area</h2>
       <div class="fruit-tree-list-container">
-        
-        
         <div class="fruit-tree-selection">
           <label>Showing fruit tree:</label>
-          <select id="filter-by-fruit" class="fruit-tree-select-map form-control">
+          <select
+            id="filter-by-fruit"
+            class="fruit-tree-select-map form-control"
+          >
             <option value="0">Select Fruit:</option>
           </select>
         </div>
@@ -73,12 +74,14 @@
         <ul class="fruit-tree-list"></ul>
       </div>
 
-
       <h2 class="fruit-tree-heading">Add Fruit Tree</h2>
       <div class="create-fruit-tree-container">
-        
         <form class="add-fruit-form">
-          <select class="fruit-tree-select form-control form-control-lg" id="add-fruit-tree-select" name="name">
+          <select
+            class="fruit-tree-select form-control form-control-lg"
+            id="add-fruit-tree-select"
+            name="name"
+          >
             <option value="0">Select Fruit Tree:</option>
           </select>
           <textarea
@@ -87,7 +90,9 @@
             class="add-fruit-details form-control"
             rows="3"
           ></textarea>
-          <button class="fruit-tree-submit btn btn-success" type="submit">submit</button>
+          <button class="fruit-tree-submit btn btn-success" type="submit">
+            submit
+          </button>
         </form>
       </div>
 
