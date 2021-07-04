@@ -1,5 +1,3 @@
-const bcrypt = require('bcrypt');
-const saltRounds = 10;
 const { Pool } = require('pg');
 
 let db;
@@ -17,7 +15,6 @@ if (process.env.PRODUCTION) {
 
 // bcrypt.hash(password_digest, saltRounds, function (err, hash){
 
-  
 // })
 const User = {
   findAll() {
