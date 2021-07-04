@@ -1,16 +1,16 @@
-
 const getFruitTrees = async () => {
   let res = await axios.get('/api/trees');
+  res.data['likes'] = 3;
   return res.data;
 };
 
 const createFruitTree = async (user_id, name, details, loc_lat, loc_long) => {
   const data = {
-    user_id: user_id, 
+    user_id: user_id,
     name: name,
     details: details,
     loc_lat: loc_lat,
-    loc_long: loc_long
+    loc_long: loc_long,
   };
 
   axios
@@ -82,17 +82,27 @@ const loginUser = async (email, password) => {
       console.log(res);
       loggedIn = true;
       userId = res.data.userId;
+      userName = res.data.name;
     })
     .catch((err) => {
       console.log(err.response.data.message);
+      userId = 0;
+      userName = '';
     });
 };
 
 const areYouLoggedIn = async () => {
   res = await axios.get('/api/users/logged');
 
-  res.data.loggedIn ? (userId = res.data.userId) : (UserId = 0);
-  console.log(res.data.loggedIn)
+  if (res.data.loggedIn) {
+    userId = res.data.userId;
+    userName = res.data.name;
+  } else {
+    UserId = 0;
+    userName = '';
+  }
+  console.log(res.data.loggedIn);
+
   return res.data.loggedIn;
 };
 
@@ -100,3 +110,13 @@ const logoutUser = async () => {
   axios.get('/api/users/logout');
   loggedIn = false;
 };
+
+// extra page building code
+
+if (loggedIn) {
+  userThumbnailAccount.innerHTML = `<h2>${userName
+    .charAt(0)
+    .toUpperCase()}</h2>`;
+} else {
+  userThumbnailAccount.innerHTML = userThumbnailInnerHtmlSVG;
+}
