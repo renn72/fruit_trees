@@ -24,6 +24,7 @@ const formatFruitTrees = (fruitTrees) => {
       create_at: create_at,
       user_id: user_id,
     };
+
     return formatTree;
   });
 };
