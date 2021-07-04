@@ -1,3 +1,4 @@
+
 const getFruitTrees = async () => {
   let res = await axios.get('/api/trees');
   return res.data;
@@ -91,7 +92,7 @@ const areYouLoggedIn = async () => {
   res = await axios.get('/api/users/logged');
 
   res.data.loggedIn ? (userId = res.data.userId) : (UserId = 0);
-
+  console.log(res.data.loggedIn)
   return res.data.loggedIn;
 };
 
