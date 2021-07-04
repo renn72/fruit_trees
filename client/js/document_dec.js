@@ -57,7 +57,7 @@ const userLng = document.querySelector('.user-lng');
 function initMap() {
   let mapOptions = {
     center: { lat: -37.8136, lng: 144.9631 },
-    zoom: 9,
+    zoom: 10,
   };
 
   map = new google.maps.Map(mapDiv, mapOptions);

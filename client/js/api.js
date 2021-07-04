@@ -3,6 +3,25 @@ const getFruitTrees = async () => {
   return res.data;
 };
 
+const createFruitTree = async (user_id, name, details, loc_lat, loc_long) => {
+  const data = {
+    user_id: user_id, 
+    name: name,
+    details: details,
+    loc_lat: loc_lat,
+    loc_long: loc_long
+  };
+
+  axios
+    .post('/api/trees', data)
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err.response.data.message);
+    });
+};
+
 const getComments = async () => {
   res = await axios.get('/api/comments');
   return res.data;
