@@ -12,7 +12,7 @@ function createFruitList(fruits) {
   while (fruitList.firstChild) {
     fruitList.firstChild.remove();
   }
-  fruitTreeListUl.style.border = "solid 1px green"
+  fruitTreeListUl.style.border = 'solid 1px green';
 
   fruits.forEach((fruit) => {
     let fruitItem = document.createElement('li');

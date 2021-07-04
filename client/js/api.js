@@ -1,6 +1,13 @@
 const getFruitTrees = async () => {
   let res = await axios.get('/api/trees');
-  res.data['likes'] = 3;
+
+  res.data.forEach((tree) => {
+    tree['likes'] = 3;
+    tree['comments'] = ['nice tree', 'shit tree'];
+  });
+
+  console.log(res.data);
+
   return res.data;
 };
 
