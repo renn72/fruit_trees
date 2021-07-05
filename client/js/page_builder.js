@@ -155,10 +155,21 @@ function distance(lat1, lon1, lat2, lon2, unit) {
   }
 }
 
+const buildFruitTreeObject = () => {
+  fruitTreeLocations.forEach((tree, i) => {
+    tree['likes'] = likes.filter(
+      (like) => like.fruit_tree_id === tree.id
+    ).length;
+    tree['comments'] = comments
+      .filter((com) => com.fruit_tree_id === fruitTreeLocations[0].id)
+      .map((com) => com.body);
+  });
+};
+
 const buildPage = async () => {
-  fruitTreeLocations = await getFruitTrees();
   comments = await getComments();
   likes = await getLikes();
+  fruitTreeLocations = await getFruitTrees();
   fruitTreeTypes = await getTypes();
   loggedIn = await areYouLoggedIn();
 
@@ -168,6 +179,7 @@ const buildPage = async () => {
     buildMapMakers();
   });
 
+  buildFruitTreeObject();
   createFruitDropDownMap();
   addFruitTreeDiv();
   renderUserThumb();
