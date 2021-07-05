@@ -20,38 +20,28 @@ function createFruitList(fruits) {
     let fruitItemDiv = document.createElement('div');
     fruitItemDiv.className = 'fruit-item-div';
 
-<<<<<<< HEAD
-    let fruitItemName = document.createElement('div');
-    fruitItemName.textContent = `Fruit: ${fruit.content}`;
-    let fruitItemDetails = document.createElement('div');
-    fruitItemDetails.textContent = `Details: ${fruit.details}`;
-    fruitItemDiv.appendChild(fruitItemName);
-    fruitItemDiv.appendChild(fruitItemDetails);
-=======
-    let fruitItemNameContainer = document.createElement('div')
-    let fruitItemNameTitle = document.createElement('span')
-    fruitItemNameTitle.textContent = 'Fruit: '
-    fruitItemNameTitle.style.fontWeight = 'bold'
+    let fruitItemNameContainer = document.createElement('div');
+    let fruitItemNameTitle = document.createElement('span');
+    fruitItemNameTitle.textContent = 'Fruit: ';
+    fruitItemNameTitle.style.fontWeight = 'bold';
     let fruitItemName = document.createElement('p');
-    fruitItemName.style.display = 'inline'
+    fruitItemName.style.display = 'inline';
     fruitItemName.textContent = `${fruit.content}`;
-    fruitItemNameContainer.appendChild(fruitItemNameTitle)
-    fruitItemNameContainer.appendChild(fruitItemName)
+    fruitItemNameContainer.appendChild(fruitItemNameTitle);
+    fruitItemNameContainer.appendChild(fruitItemName);
 
-    let fruitItemDetailsContainer = document.createElement('div')
-    let fruitItemDetailsTitle = document.createElement('span')
-    fruitItemDetailsTitle.textContent = 'Details: '
-    fruitItemDetailsTitle.style.fontWeight = 'bold'
+    let fruitItemDetailsContainer = document.createElement('div');
+    let fruitItemDetailsTitle = document.createElement('span');
+    fruitItemDetailsTitle.textContent = 'Details: ';
+    fruitItemDetailsTitle.style.fontWeight = 'bold';
     let fruitItemDetails = document.createElement('p');
-    fruitItemDetails.style.display = 'inline'
+    fruitItemDetails.style.display = 'inline';
     fruitItemDetails.textContent = `${fruit.details}`;
-    fruitItemDetailsContainer.appendChild(fruitItemDetailsTitle)
-    fruitItemDetailsContainer.appendChild(fruitItemDetails)
-    
-  
-    fruitItemDiv.appendChild(fruitItemNameContainer)
-    fruitItemDiv.appendChild(fruitItemDetailsContainer)
->>>>>>> dd63e37 (fruit list style updates)
+    fruitItemDetailsContainer.appendChild(fruitItemDetailsTitle);
+    fruitItemDetailsContainer.appendChild(fruitItemDetails);
+
+    fruitItemDiv.appendChild(fruitItemNameContainer);
+    fruitItemDiv.appendChild(fruitItemDetailsContainer);
     fruitList.appendChild(fruitItemDiv);
     fruitList.style.height = '500px';
   });
