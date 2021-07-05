@@ -42,7 +42,7 @@
 
       <div id="navLinks">
         <a href="login.html">Login</a>
-        <a href="#about">About</a>
+        <a href="about.html">About</a>
         <a href="#contact">Contact</a>
         <a href="#FAQ">FAQ</a>
       </div>
@@ -51,8 +51,7 @@
         <i class="fa fa-bars"></i>
       </a>
     </header>
-  </body>
-</html>
+ 
       <div class="user-info">
         <div class="profile-background">
           <svg
@@ -71,9 +70,9 @@
       
         <div class="content">
             <form action="" class="edit-form">
-              <label for="firstname">Name</label>
+              <label for="name">Name</label>
               <input
-                class="firstname form-control form-control-lg"
+                class="user-name form-control form-control-lg"
                 type="text"
                 placeholder="Name"
                 name="name"
@@ -81,7 +80,7 @@
       
               <label for="emailaddress">Email Address</label>
               <input
-                class="form-control form-control-lg"
+                class="user-email form-control form-control-lg"
                 type="email"
                 placeholder="email@example.com"
                 name="email"
@@ -126,6 +125,15 @@
             navLinkDiv.style.right = '0%';
           }
         }
+
+        setTimeout(() => {
+          const userNameLabel = document.querySelector(".user-name")
+          userNameLabel.placeholder = window.userName;
+          
+          document.querySelector(".user-email").textContent = window.userEmail;
+
+        }, 500)
+
       </script>
 </body>
 </html>
