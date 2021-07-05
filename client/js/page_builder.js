@@ -16,15 +16,21 @@ function createFruitList(fruits) {
   while (fruitList.firstChild) {
     fruitList.firstChild.remove();
   }
-  fruitTreeListUl.style.border = 'solid 1px green';
 
   fruits.forEach((fruit) => {
-    let fruitItemName = document.createElement('li');
+    let fruitItemDiv = document.createElement('div')
+    fruitItemDiv.className = "fruit-item-div"
+
+    let fruitItemName = document.createElement('div');
     fruitItemName.textContent = `Fruit: ${fruit.content}`;
-    fruitList.appendChild(fruitItemName);
-    let fruitItem = document.createElement('li');
-    fruitItem.textContent = `--> ${fruit.details}`;
-    fruitList.appendChild(fruitItem);
+      console.log(fruitItemName)
+    let fruitItemDetails = document.createElement('div');
+    fruitItemDetails.textContent = `Details: ${fruit.details}`;
+      console.log(fruitItemDetails)
+    fruitItemDiv.appendChild(fruitItemName)
+    fruitItemDiv.appendChild(fruitItemDetails)
+    fruitList.appendChild(fruitItemDiv);
+    fruitList.style.height = '500px'
   });
 
   fruitTreeListDiv.appendChild(fruitList);
