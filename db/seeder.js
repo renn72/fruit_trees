@@ -38,9 +38,9 @@ const names = [
 const trees = FruitTreeTypes.types;
 
 const comments = [
-  'nice tree',
-  'shit tree',
-  'happy tree',
+  'nice, nice tree',
+  'really shit tree, like the worst',
+  'happy tree, lets dance',
   'sad tree',
   'nice fruit',
   'sad fruit',
@@ -228,7 +228,7 @@ const seed = async () => {
   let fruitTreeIds = await getFruitTreeIds();
   fruitTreeIds = fruitTreeIds.rows.map((id) => id.id);
 
-  for (let i = 0; i < 250; i++) {
+  for (let i = 0; i < 2500; i++) {
     createComment(
       _.sample(comments),
       _.sample(fruitTreeIds),

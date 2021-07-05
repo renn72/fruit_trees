@@ -15,7 +15,7 @@ if (process.env.PRODUCTION) {
 
 const Like = {
   findAll() {
-    const sql = 'select * from comments;';
+    const sql = 'select * from likes;';
     return db.query(sql);
   },
 
