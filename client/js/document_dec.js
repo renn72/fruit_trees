@@ -69,6 +69,8 @@ const createUserForm = document.querySelector('.signup-form');
 
 const loginForm = document.querySelector('.login-form');
 
+const editUserForm = document.querySelector('.edit-form');
+
 const userThumbnailAccount = document.querySelector('.user-thumbnail-account');
 
 const userTreeInfo = document.querySelector('.user-tree-info')

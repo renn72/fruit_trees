@@ -12,7 +12,7 @@ function validateEmail(email) {
 
 function validateUser(req, res, next) {
   const { name, email } = req.body;
-
+  
   if (!validateEmail(email)) {
     throw invalidTreeError('incorrect email');
   } else if (name.length < 2) {
