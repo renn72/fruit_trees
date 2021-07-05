@@ -50,7 +50,7 @@ const getTypes = async () => {
 };
 
 const getUser = async (id) => {
-  res = await axios.get(`/api/users/${id}`);
+  let res = await axios.get(`/api/users/${id}`);
   console.log(res.data);
   return res.data;
 };
@@ -59,6 +59,16 @@ const getAllUsers = async () => {
   res = await axios.get(`/api/users`);
   console.log(res.data);
   return res.data;
+};
+
+const updateUser = async (id, name, email, password_digest) => {
+  data = {
+    name: name,
+    email: email,
+    password_digest: password_digest,
+  };
+  let res = axios.put(`/api/users/${id}`, data);
+  console.log(res);
 };
 
 const createUser = async (name, email, password) => {

@@ -21,6 +21,18 @@ router.post('/', validateUser, (req, res) => {
   });
 });
 
+router.put('/:id', validateUser, (req, res) => {
+  const { name, email, password_digest } = req.body;
+  const id = req.params.id;
+
+  User.update(id, name, email, password_digest).then((dbResponse) => {
+    res.status(201).json({
+      message: 'user created updated',
+      user: dbResponse.rows[0],
+    });
+  });
+});
+
 router.delete('/:id', (req, res) => {
   User.delete(req.params.id).then((dbResponse) => {
     res.json({ message: 'user deleted' });
