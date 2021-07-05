@@ -137,6 +137,10 @@ body {
   overflow: scroll;
 }
 
+.fruit-tree-title {
+  font-weight: bold;
+}
+
 .fruit-item-div {
   width: 80%;
   border: solid 2px #3d9048;
