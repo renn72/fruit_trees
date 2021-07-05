@@ -3,17 +3,14 @@
 //this tells us where it's gonna mark it but not a marker of google, used this to create google marker which is will be in mapMarkers
 
 const filterLocationsByFruit = () => {
-  let fruitTreeValue = fruitTreeSelectMap.value;
-
+  let fruitTreeValue = fruitTreeSelectMap.value
   deleteMarkers();
-
   let selectedFruits = fruitTreeLocations.filter(
     (fruit) => fruit.name === fruitTreeValue
   );
   selectedFruits.forEach((marker) => {
     addMarker(marker);
   });
-
   createFruitList(selectedFruits);
 };
 
