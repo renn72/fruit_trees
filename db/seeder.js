@@ -131,11 +131,104 @@ const seed = async () => {
       );
     }
   }
+  for (let i = 0; i < 2; i++) {
+    for await (const tree of trees) {
+      await createFruitTree(
+        tree,
+        _.random(-37.75, -37.97),
+        _.random(145, 145.35),
+        `a pretty ${tree} tree`,
+        'address',
+        timestamp,
+        _.sample(userIds)
+      );
+    }
+  }
+  for (let i = 0; i < 2; i++) {
+    for await (const tree of trees) {
+      await createFruitTree(
+        tree,
+        _.random(-37.75, -37.97),
+        _.random(145, 145.35),
+        `a pretty ${tree} tree`,
+        'address',
+        timestamp,
+        _.sample(userIds)
+      );
+    }
+  }
+  for (let i = 0; i < 2; i++) {
+    for await (const tree of trees) {
+      await createFruitTree(
+        tree,
+        _.random(-37.63, -37.83),
+        _.random(144.67, 145.12),
+        `a pretty ${tree} tree`,
+        'address',
+        timestamp,
+        _.sample(userIds)
+      );
+    }
+  }
+  for (let i = 0; i < 1; i++) {
+    for await (const tree of trees) {
+      await createFruitTree(
+        tree,
+        _.random(-37.93, -38.2),
+        _.random(145.12, 145.37),
+        `a pretty ${tree} tree`,
+        'address',
+        timestamp,
+        _.sample(userIds)
+      );
+    }
+  }
+  for (let i = 0; i < 1; i++) {
+    for await (const tree of trees) {
+      await createFruitTree(
+        tree,
+        _.random(-38.21, -38.39),
+        _.random(145.03, 145.19),
+        `a pretty ${tree} tree`,
+        'address',
+        timestamp,
+        _.sample(userIds)
+      );
+    }
+  }
+
+  for (let i = 0; i < 1; i++) {
+    for await (const tree of trees) {
+      await createFruitTree(
+        tree,
+        _.random(-38.07, -38.21),
+        _.random(145.31, 145.35),
+        `a pretty ${tree} tree`,
+        'address',
+        timestamp,
+        _.sample(userIds)
+      );
+    }
+  }
+
+  for (let i = 0; i < 1; i++) {
+    for await (const tree of trees) {
+      await createFruitTree(
+        tree,
+        _.random(-37.8, -37.86),
+        _.random(144.66, 144.9),
+        `a pretty ${tree} tree`,
+        'address',
+        timestamp,
+        _.sample(userIds)
+      );
+    }
+  }
 
   let fruitTreeIds = await getFruitTreeIds();
   fruitTreeIds = fruitTreeIds.rows.map((id) => id.id);
 
-  for (let i = 0; i < 50; i++) {
+  for (let i = 0; i < 250; i++) {
     createComment(
       _.sample(comments),
       _.sample(fruitTreeIds),
