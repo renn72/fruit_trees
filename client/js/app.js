@@ -5,13 +5,20 @@
 const filterLocationsByFruit = () => {
   let fruitTreeValue = fruitTreeSelectMap.value
   deleteMarkers();
-  let selectedFruits = fruitTreeLocations.filter(
-    (fruit) => fruit.name === fruitTreeValue
-  );
-  selectedFruits.forEach((marker) => {
-    addMarker(marker);
-  });
-  createFruitList(selectedFruits);
+  if (fruitTreeValue === "Select all fruit") {
+    fruitTreeLocations.forEach((marker) => {
+      addMarker(marker);
+    });
+    createFruitList(fruitTreeLocations);
+  } else {
+    let selectedFruits = fruitTreeLocations.filter(
+      (fruit) => fruit.name === fruitTreeValue
+    );
+    selectedFruits.forEach((marker) => {
+      addMarker(marker);
+    });
+    createFruitList(selectedFruits);
+  }
 };
 
 function setMapOnAll(map) {

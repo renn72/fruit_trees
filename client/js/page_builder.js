@@ -1,11 +1,15 @@
 // build the page that the user sees once the page has loaded.
 
 function createFruitDropDownMap() {
+  let selectAllFruit = document.createElement('option');
+  selectAllFruit.textContent = "Select all fruit";
+  fruitTreeSelectMap.appendChild(selectAllFruit);
   fruitTreeTypes.forEach((item) => {
     let fruitOption = document.createElement('option');
     fruitOption.textContent = item;
     fruitTreeSelectMap.appendChild(fruitOption);
   });
+
 }
 
 function createFruitList(fruits) {
