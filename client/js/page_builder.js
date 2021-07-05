@@ -2,14 +2,13 @@
 
 function createFruitDropDownMap() {
   let selectAllFruit = document.createElement('option');
-  selectAllFruit.textContent = "Select all fruit";
+  selectAllFruit.textContent = 'Select all fruit';
   fruitTreeSelectMap.appendChild(selectAllFruit);
   fruitTreeTypes.forEach((item) => {
     let fruitOption = document.createElement('option');
     fruitOption.textContent = item;
     fruitTreeSelectMap.appendChild(fruitOption);
   });
-
 }
 
 function createFruitList(fruits) {
@@ -18,19 +17,17 @@ function createFruitList(fruits) {
   }
 
   fruits.forEach((fruit) => {
-    let fruitItemDiv = document.createElement('div')
-    fruitItemDiv.className = "fruit-item-div"
+    let fruitItemDiv = document.createElement('div');
+    fruitItemDiv.className = 'fruit-item-div';
 
     let fruitItemName = document.createElement('div');
     fruitItemName.textContent = `Fruit: ${fruit.content}`;
-      console.log(fruitItemName)
     let fruitItemDetails = document.createElement('div');
     fruitItemDetails.textContent = `Details: ${fruit.details}`;
-      console.log(fruitItemDetails)
-    fruitItemDiv.appendChild(fruitItemName)
-    fruitItemDiv.appendChild(fruitItemDetails)
+    fruitItemDiv.appendChild(fruitItemName);
+    fruitItemDiv.appendChild(fruitItemDetails);
     fruitList.appendChild(fruitItemDiv);
-    fruitList.style.height = '500px'
+    fruitList.style.height = '500px';
   });
 
   fruitTreeListDiv.appendChild(fruitList);
