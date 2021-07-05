@@ -4,3 +4,5 @@ const buildAccountPage = async () => {
 };
 
 buildAccountPage();
+
+userLogoutBtn.addEventListener('click', logoutUser)

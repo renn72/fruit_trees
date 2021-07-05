@@ -142,6 +142,7 @@ const areYouLoggedIn = async () => {
 const logoutUser = async () => {
   axios.get('/api/users/logout');
   loggedIn = false;
+  document.location.href = 'login.html';
 };
 
 const userThumbnailInnerHtmlSVG = `<svg
