@@ -62,3 +62,6 @@ We used the following dependencies to assist in both development and production.
 * Node JS
 * Express JS
 * PostgreSQL Database 
+* Google Maps API - Map, Geolocation and distance
+* Bootstrap library 
+* Axios - promise based HTTP client for Node JS, that enables async functionality. 

@@ -325,11 +325,13 @@ tr {
   font-size: 3em;
   text-align: left;
   padding: 2%;
+  text-decoration: underline;
 }
 
 .user-tree-info-container {
   border: 1px solid green;
-  margin-top: 20%;
+  border-radius: 10px;
+  margin-top: 10%;
 }
 .user-tree-info {
   margin: 2% 0;
@@ -343,4 +345,9 @@ tr {
 
 .edit-form {
   text-align: left;
+}
+
+.account-page-name, 
+.account-page-email {
+  font-weight: bold;
 }

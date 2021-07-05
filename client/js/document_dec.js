@@ -63,6 +63,8 @@ const loginForm = document.querySelector('.login-form');
 
 const userThumbnailAccount = document.querySelector('.user-thumbnail-account');
 
+const userTreeInfo = document.querySelector('.user-tree-info')
+
 function initMap() {
   let mapOptions = {
     center: { lat: -37.8136, lng: 144.9631 },
