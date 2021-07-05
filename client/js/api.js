@@ -97,6 +97,9 @@ const createUser = async (name, email, password) => {
 const loginUser = async (email, password) => {
   let password_digest = password;
 
+  console.log('post call');
+  console.log(password);
+
   const data = {
     email: email,
     password_digest: password_digest,
@@ -109,6 +112,7 @@ const loginUser = async (email, password) => {
       loggedIn = true;
       userId = res.data.userId;
       userName = res.data.userName;
+      userEmail = res.data.email;
       document.location.href = 'index.html'; // I hate putting this here
     })
     .catch((err) => {
@@ -125,9 +129,11 @@ const areYouLoggedIn = async () => {
   if (res.data.loggedIn) {
     userId = res.data.userId;
     userName = res.data.userName;
+    userEmail = res.data.userEmail;
   } else {
     UserId = 0;
     userName = '';
+    userEmail = '';
   }
 
   return res.data.loggedIn;

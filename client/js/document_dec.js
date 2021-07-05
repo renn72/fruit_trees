@@ -13,6 +13,7 @@ if (typeof (loggedIn !== 'undefined')) {
 }
 var userId;
 var userName;
+var userEmail;
 
 var treeIconMap = [
   {
@@ -21,14 +22,21 @@ var treeIconMap = [
     apple:
       'https://icons.iconarchive.com/icons/bingxueling/fruit-vegetables/48/apple-red-icon.png',
     pear: 'https://icons.iconarchive.com/icons/google/noto-emoji-food-drink/48/32351-pear-icon.png',
-    olive: "https://icons.iconarchive.com/icons/icons-land/3d-food/32/Fruit-Olive-Green-icon.png",
-    lemon: "https://icons.iconarchive.com/icons/bingxueling/fruit-vegetables/32/lemon-icon.png",
-    lime: "https://icons.iconarchive.com/icons/fi3ur/fruitsalad/32/lime-icon.png",
-    orange: "https://icons.iconarchive.com/icons/bingxueling/fruit-vegetables/32/orange-icon.png",
-    grape: "https://icons.iconarchive.com/icons/google/noto-emoji-food-drink/32/32341-grapes-icon.png", 
-    chilli: "https://icons.iconarchive.com/icons/indeepop/rave/32/hot-chili-icon.png", 
-    tomato: "https://icons.iconarchive.com/icons/artbees/paradise-fruits/32/Tomato-icon.png", 
-    peach: "https://icons.iconarchive.com/icons/artbees/paradise-fruits/32/Peach-icon.png"
+    olive:
+      'https://icons.iconarchive.com/icons/icons-land/3d-food/32/Fruit-Olive-Green-icon.png',
+    lemon:
+      'https://icons.iconarchive.com/icons/bingxueling/fruit-vegetables/32/lemon-icon.png',
+    lime: 'https://icons.iconarchive.com/icons/fi3ur/fruitsalad/32/lime-icon.png',
+    orange:
+      'https://icons.iconarchive.com/icons/bingxueling/fruit-vegetables/32/orange-icon.png',
+    grape:
+      'https://icons.iconarchive.com/icons/google/noto-emoji-food-drink/32/32341-grapes-icon.png',
+    chilli:
+      'https://icons.iconarchive.com/icons/indeepop/rave/32/hot-chili-icon.png',
+    tomato:
+      'https://icons.iconarchive.com/icons/artbees/paradise-fruits/32/Tomato-icon.png',
+    peach:
+      'https://icons.iconarchive.com/icons/artbees/paradise-fruits/32/Peach-icon.png',
   },
 ];
 
@@ -73,7 +81,7 @@ const editUserForm = document.querySelector('.edit-form');
 
 const userThumbnailAccount = document.querySelector('.user-thumbnail-account');
 
-const userTreeInfo = document.querySelector('.user-tree-info')
+const userTreeInfo = document.querySelector('.user-tree-info');
 
 function initMap() {
   let mapOptions = {

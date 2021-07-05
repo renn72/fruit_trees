@@ -30,7 +30,6 @@ function createFruitList(fruits) {
   fruitTreeListDiv.appendChild(fruitList);
 }
 
-
 function addFruitTreeDiv() {
   fruitTreeTypes.forEach((item) => {
     let fruitOption = document.createElement('option');

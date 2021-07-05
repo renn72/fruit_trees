@@ -5,8 +5,7 @@
 // }
 
 const validateUserLogin = (req, res) => {
-  return true;
-  req.email === res.email && req.password_digest === res.password_digest
+  return req.email === res.email && req.password_digest === res.password_digest
     ? true
     : false;
 };
