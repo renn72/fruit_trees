@@ -64,19 +64,23 @@ function userLocationOnMap() {
 
 function handleAddFruitSubmit(e) {
   e.preventDefault();
+
   navigator.geolocation.getCurrentPosition((res) => {
     const data = Object.fromEntries(new FormData(addFruitForm));
     data['loc_lat'] = res.coords.latitude;
     data['loc_long'] = res.coords.longitude;
-    data['user_id'] = 45 
-    console.log(data)
-    createFruitTree(data.user_id, data.name, data.details, data.loc_lat, data.loc_long)
+    data['user_id'] = 389;
+
+    createFruitTree(
+      data.user_id,
+      data.name,
+      data.details,
+      data.loc_lat,
+      data.loc_long
+    );
   });
 }
-
 
 // findMeBtn.addEventListener('click', geoFindMe);
 fruitTreeSelectMap.addEventListener('change', filterLocationsByFruit);
 addFruitForm.addEventListener('submit', handleAddFruitSubmit);
-
-
