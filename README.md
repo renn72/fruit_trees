@@ -7,10 +7,10 @@ The Fruit Finder web-based application solves the issue of locating freely avail
 
 The application allows users to find freely available fruit trees in their area. A user can create an account and add fruit tree locations. The locations are added to the map and can then be viewed by other users. If a user has an account they are able to like and comment on different fruit trees. 
 
-The app was built using Node JS and the Express JS framework to enable the server-side and Client-side to be written in JavaScript. The application utlisies the Google Maps API inorder to display and locate fruit tree location on a map.
+The app was built using Node JS and the Express JS framework to enable the server-side and Client-side to be written in JavaScript. The application utlisies the Google Maps API inorder to display and locate fruit tree locations on a map.
 
 We used the following dependencies to assist in both development and production. 
-- bcrypt -> password encryption  library 
+- bcrypt -> password encryption library 
 - dotenv -> moduled used to access environemnt variables within in Node JS
 - express -> used to create server framework and the application API. 
 - express-session -> module to create session middleware. 
