@@ -18,8 +18,8 @@
     />
 
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
-  </head>
-  <body>
+</head>
+<body>
     <header class="nav-bar page-header-container">
       <div class="user-thumbnail">
         <a class="account user-thumbnail-account" href="account.html">
@@ -52,33 +52,20 @@
       </a>
     </header>
 
-    <div class="content">
-      <form action="" class="login-form">
-        <label for="emailaddress">Email Address</label>
-        <input
-          class="form-control form-control-lg"
-          type="email"
-          placeholder="email@example.com"
-          name="email"
-        />
+    <article class="about-content">
+        <h2>About Us</h2>
+        <p>The Fruit Finder web-based application solves the issue of locating freely available fruit and vegetables that are publically accessible.
 
-        <label for="password">Password</label>
-        <input
-          class="form-control form-control-lg"
-          type="password"
-          placeholder="Password"
-          name="password"
-        />
+        The application allows users to find freely available fruit trees in their area. A user can create an account and add fruit tree locations. The locations are added to the map and can then be viewed by other users. If a user has an account they are able to like and comment on different fruit trees.
 
-        <button class="login-btn btn btn-success">Login</button>
-        <span class="login-span">or</span
-        ><a href="signup.html" class="signup-a">sign up</a>
-      </form>
-    </div>
+        </p>
+    </article>
 
-    <footer class="page-footer login-signup-footer">
-      <p>&copy;2021 Fruit Tree Finder</p>
-    </footer>
+
+
+      <footer class="page-footer login-signup-footer">
+        <p>2021&copy; Fruit Tree Finder</p>
+      </footer>
     <script src="./js/document_dec.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -86,19 +73,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="./js/api.js"></script>
-    <script src="./js/login.js"></script>
-    <script>
-      function toggleNavBar() {
-        var navLinkDiv = document.getElementById('navLinks');
-        if (navLinkDiv.style.display === 'block') {
-          navLinkDiv.style.display = 'none';
-        } else {
-          navLinkDiv.style.display = 'block';
-          // navLinkDiv.style.position = 'absolute';
-          navLinkDiv.style.top = '100%';
-          navLinkDiv.style.right = '0%';
+    <script src="./js/account.js"></script>
+      <script>
+        function toggleNavBar() {
+          var navLinkDiv = document.getElementById('navLinks');
+          if (navLinkDiv.style.display === 'block') {
+            navLinkDiv.style.display = 'none';
+          } else {
+            navLinkDiv.style.display = 'block';
+            // navLinkDiv.style.position = 'absolute';
+            navLinkDiv.style.top = '100%';
+            navLinkDiv.style.right = '0%';
+          }
         }
-      }
-    </script>
-  </body>
+      </script>
+</body>
 </html>

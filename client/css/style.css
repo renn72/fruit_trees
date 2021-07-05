@@ -366,3 +366,13 @@ tr {
 .account-page-email {
   font-weight: bold;
 }
+
+.about-content{
+  font-size: 4em;
+  margin: 20% 5%;
+}
+
+.about-content>h2{
+  font-size: 1.5em;
+  margin-bottom: 5%;
+}
