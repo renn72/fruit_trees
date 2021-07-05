@@ -3,6 +3,14 @@ const FruitTreeType = {
     'cherry',
     'apple',
     'pear',
+    'olive',
+    'lemon',
+    'lime',
+    'grape',
+    'orange',
+    'tomato',
+    'chilli',
+    'peach'
   ],
 };
 
