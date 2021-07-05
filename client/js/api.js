@@ -67,7 +67,8 @@ const updateUser = async (id, name, email, password_digest) => {
     email: email,
     password_digest: password_digest,
   };
-  let res = axios.patch(`/api/users/${id}`, data);
+  let res = axios.put(`/api/users/${id}`, data);
+  console.log(res);
 };
 
 const createUser = async (name, email, password) => {

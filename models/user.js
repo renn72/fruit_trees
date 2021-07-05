@@ -13,9 +13,6 @@ if (process.env.PRODUCTION) {
   });
 }
 
-// bcrypt.hash(password_digest, saltRounds, function (err, hash){
-
-// })
 const User = {
   findAll() {
     const sql = 'select * from users;';
@@ -44,6 +41,13 @@ const User = {
   delete(id) {
     const sql = 'delete from users where id = $1;';
     return db.query(sql, [id]);
+  },
+
+  update(id, name, email, password_digest) {
+    const sql =
+      'update users set name = $1, email = $2, password_digest = $3 where id = $4;';
+
+    return db.query(sql, [name, email, password_digest, id]);
   },
 };
 
