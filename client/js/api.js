@@ -89,7 +89,7 @@ const createUser = async (name, email, password) => {
     .post('/api/users/', data)
     .then((res) => {
       console.log(res);
-      document.location.href = '/login';
+      document.location.href = '/login.html';
     })
     .catch((err) => {});
 };
