@@ -33,11 +33,14 @@ const createFruitTree = async (user_id, name, details, loc_lat, loc_long) => {
         lng: res.data.fruit_tree.loc_long,
       };
       console.log(res.data.fruit_tree);
-      addMarker(res);
     })
     .catch((err) => {
       console.log(err.response);
     });
+};
+
+const deleteFruitTree = async (id) => {
+  axios.delete(`api/trees/${id}`).then();
 };
 
 const getComments = async () => {

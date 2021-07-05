@@ -34,6 +34,7 @@ router.post('/', validateFruitTree, (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
+  console.log(req.params.id);
   FruitTree.delete(req.params.id).then((dbResponse) => {
     res.json({ message: 'delete success' });
   });
