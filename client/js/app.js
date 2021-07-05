@@ -3,9 +3,9 @@
 //this tells us where it's gonna mark it but not a marker of google, used this to create google marker which is will be in mapMarkers
 
 const filterLocationsByFruit = () => {
-  let fruitTreeValue = fruitTreeSelectMap.value
+  let fruitTreeValue = fruitTreeSelectMap.value;
   deleteMarkers();
-  if (fruitTreeValue === "Select all fruit") {
+  if (fruitTreeValue === 'Select all fruit') {
     fruitTreeLocations.forEach((marker) => {
       addMarker(marker);
     });
@@ -69,20 +69,27 @@ function userLocationOnMap() {
 function handleAddFruitSubmit(e) {
   e.preventDefault();
 
-  navigator.geolocation.getCurrentPosition((res) => {
-    const data = Object.fromEntries(new FormData(addFruitForm));
-    data['loc_lat'] = res.coords.latitude;
-    data['loc_long'] = res.coords.longitude;
-    data['user_id'] = 389;
-
-    createFruitTree(
-      data.user_id,
-      data.name,
-      data.details,
-      data.loc_lat,
-      data.loc_long
-    );
-  });
+  if (loggedIn) {
+    navigator.geolocation.getCurrentPosition((res) => {
+      const data = Object.fromEntries(new FormData(addFruitForm));
+      data['loc_lat'] = res.coords.latitude;
+      data['loc_long'] = res.coords.longitude;
+      data['user_id'] = userId;
+      data['coords'] = {
+        lat: data.loc_lat,
+        lng: data.loc_long,
+      };
+      createFruitTree(
+        data.user_id,
+        data.name,
+        data.details,
+        data.loc_lat,
+        data.loc_long
+      );
+      addMarker(data);
+      buildMapMakers();
+    });
+  }
 }
 
 // findMeBtn.addEventListener('click', geoFindMe);

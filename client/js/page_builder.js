@@ -48,6 +48,7 @@ function buildMapMakers() {
 }
 
 function addMarker(props) {
+  console.log('addMarker');
   let marker = new google.maps.Marker({
     position: props.coords,
     map: map,
