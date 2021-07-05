@@ -169,9 +169,6 @@ li {
 }
 
 .page-footer {
-  position: absolute;
-  right: 0;
-  left: 0;
   background-color: #a6d468;
   text-align: center;
   padding: 5%;
@@ -226,8 +223,7 @@ ul.fruit-tree-list {
 
 /* for login form */
 .login-signup-footer {
-  font-size: 2.5em;
-  bottom: 0;
+  font-size: 3em;
 }
 
 .login-form,
