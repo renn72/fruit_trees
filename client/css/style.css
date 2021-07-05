@@ -241,7 +241,8 @@ ul.fruit-tree-list {
 
 .login-btn,
 .signup-btn,
-.edit-btn {
+.edit-btn, 
+.logout-btn{
   width: 100%;
   margin-top: 5%;
 }
@@ -375,4 +376,8 @@ tr {
 .about-content>h2{
   font-size: 1.5em;
   margin-bottom: 5%;
+}
+
+.logout-btn{
+  font-size: 3em;
 }

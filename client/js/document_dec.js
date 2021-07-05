@@ -83,6 +83,8 @@ const userThumbnailAccount = document.querySelector('.user-thumbnail-account');
 
 const userTreeInfo = document.querySelector('.user-tree-info');
 
+const userLogoutBtn = document.querySelector('.logout-btn')
+
 function initMap() {
   let mapOptions = {
     center: { lat: -37.8136, lng: 144.9631 },
